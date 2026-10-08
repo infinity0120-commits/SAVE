@@ -1,0 +1,77 @@
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'VideoShrink — Free Online Video Compressor | No Upload',
+  description:
+    'Compress video files right in your browser. 100% private — your videos never leave your device. Free, no sign-up, works on iPhone, Android, Mac & PC.',
+  applicationName: 'VideoShrink',
+  manifest: '/manifest.json',
+  keywords: [
+    'video compressor',
+    'compress video online',
+    'reduce video file size',
+    'iPhone video compression',
+    'ffmpeg wasm',
+    'free video compressor',
+    'video size reducer',
+    'compress mp4',
+    '아이폰 동영상 용량 줄이기',
+    '동영상 압축',
+  ],
+  authors: [{ name: 'VideoShrink' }],
+  openGraph: {
+    type: 'website',
+    siteName: 'VideoShrink',
+    title: 'VideoShrink — Free Online Video Compressor',
+    description:
+      'Compress videos right in your browser. No uploads, 100% private, free forever.',
+    images: [
+      {
+        url: '/icons/icon-512.png',
+        width: 512,
+        height: 512,
+        alt: 'VideoShrink',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VideoShrink — Free Online Video Compressor',
+    description:
+      'Compress videos right in your browser. No uploads, 100% private, free forever.',
+    images: ['/icons/icon-512.png'],
+  },
+  icons: {
+    icon: '/icons/icon-192.png',
+    apple: '/icons/icon-192.png',
+  },
+};
+
+export const viewport = {
+  themeColor: '#0ea5e9',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
+      <body className={inter.className} suppressHydrationWarning>
+        {children}
+      </body>
+    </html>
+  );
+}
