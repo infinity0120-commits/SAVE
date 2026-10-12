@@ -40,7 +40,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 md:py-10">
       {/* Top ad */}
-      <AdBanner slot="top" className="mb-6" />
+      <AdBanner slot="top" className="mb-6 sticky top-4 z-40" />
 
       {/* Hero */}
       <section className="mb-8 text-center md:mb-12">
