@@ -36,8 +36,21 @@ import {
 } from '@/lib/google-drive';
 
 type Preset = 'fast' | 'high' | 'target';
+type OutputFormat = 'mp4' | 'mkv' | 'webm';
 type Stage = 'idle' | 'ready' | 'loading' | 'compressing' | 'done' | 'error';
 type ItemStatus = 'waiting' | 'processing' | 'done' | 'error' | 'optimized';
+
+const formatMime: Record<OutputFormat, string> = {
+  mp4: 'video/mp4',
+  mkv: 'video/x-matroska',
+  webm: 'video/webm',
+};
+
+const formatCodecs: Record<OutputFormat, { vcodec: string; acodec: string; extra: string[] }> = {
+  mp4: { vcodec: 'libx264', acodec: 'aac', extra: ['-movflags', '+faststart'] },
+  mkv: { vcodec: 'libx264', acodec: 'aac', extra: [] },
+  webm: { vcodec: 'libvpx', acodec: 'libopus', extra: [] },
+};
 
 interface QueueItem {
   id: string;
@@ -116,6 +129,8 @@ function releaseWakeLock() {
 export function VideoCompressor({ locale, t }: VideoCompressorProps) {
   const [stage, setStage] = useState<Stage>('idle');
   const [preset, setPreset] = useState<Preset>('high');
+  const [outputFormat, setOutputFormat] = useState<OutputFormat>('mp4');
+  const [customFilename, setCustomFilename] = useState('');
   const [progress, setProgress] = useState(0);
   const [eta, setEta] = useState<number | null>(null);
   const [elapsed, setElapsed] = useState(0);
@@ -259,16 +274,44 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
     }
   }, []);
 
-  const buildCommand = useCallback((inputName: string, outputName: string, presetKey: Preset): string[] => {
-    if (presetKey === 'fast') {
-      return ['-i', inputName, '-vf', 'scale=-2:min(720\\,ih)', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '30', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', outputName];
-    } else if (presetKey === 'high') {
-      return ['-i', inputName, '-vf', 'scale=-2:min(1080\\,ih)', '-c:v', 'libx264', '-preset', 'fast', '-crf', '28', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', outputName];
+  const buildCommand = useCallback((inputName: string, outputName: string, presetKey: Preset, fmt: OutputFormat): string[] => {
+    const codecs = formatCodecs[fmt];
+    const base: string[] = ['-i', inputName];
+    const vf: string[] = ['-vf'];
+    const codecArgs: string[] = ['-c:v', codecs.vcodec, '-c:a', codecs.acodec];
+
+    if (fmt === 'webm') {
+      codecArgs.push('-b:a', '128k');
     } else {
+      codecArgs.push('-b:a', '128k');
+    }
+
+    if (presetKey === 'fast') {
+      vf.push('scale=-2:min(720\\,ih)');
+      if (fmt !== 'webm') {
+        codecArgs.push('-preset', 'ultrafast', '-crf', '30');
+      } else {
+        codecArgs.push('-deadline', 'realtime', '-crf', '35', '-b:v', '1M');
+      }
+    } else if (presetKey === 'high') {
+      vf.push('scale=-2:min(1080\\,ih)');
+      if (fmt !== 'webm') {
+        codecArgs.push('-preset', 'fast', '-crf', '28');
+      } else {
+        codecArgs.push('-deadline', 'good', '-crf', '30', '-b:v', '2M');
+      }
+    } else {
+      vf.push('scale=-2:min(720\\,ih)');
       const targetBits = 100 * 1024 * 1024 * 8;
       const videoBitrate = Math.min(4000000, Math.floor(targetBits / 60 / 2) * 2);
-      return ['-i', inputName, '-vf', 'scale=-2:min(720\\,ih)', '-c:v', 'libx264', '-preset', 'fast', '-b:v', `${videoBitrate}`, '-maxrate', `${Math.floor(videoBitrate * 1.5)}`, '-bufsize', `${videoBitrate * 2}`, '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', outputName];
+      if (fmt !== 'webm') {
+        codecArgs.push('-preset', 'fast', '-b:v', `${videoBitrate}`, '-maxrate', `${Math.floor(videoBitrate * 1.5)}`, '-bufsize', `${videoBitrate * 2}`);
+      } else {
+        codecArgs.push('-deadline', 'good', '-b:v', `${videoBitrate}`);
+      }
     }
+
+    return [...base, ...vf, ...codecArgs, ...codecs.extra, outputName];
   }, []);
 
   const compressQueue = useCallback(async () => {
@@ -303,11 +346,12 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
         setQueue((prev) => prev.map((it, idx) => idx === i ? { ...it, status: 'processing', progress: 0 } : it));
 
         const inputName = `input_${i}.${item.file.name.split('.').pop() || 'mp4'}`;
-        const outputName = `output_${i}.mp4`;
+        const outputExt = outputFormat;
+        const outputName = `output_${i}.${outputExt}`;
 
         try {
           await ffmpeg.writeFile(inputName, await fetchFile(item.file));
-          const cmd = buildCommand(inputName, outputName, preset);
+          const cmd = buildCommand(inputName, outputName, preset, outputFormat);
           await ffmpeg.exec(cmd);
 
           if (queueCancelledRef.current) {
@@ -318,9 +362,10 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
 
           stopElapsedTimer();
           const data = await ffmpeg.readFile(outputName);
-          const blob = new Blob([data as Uint8Array], { type: 'video/mp4' });
+          const blob = new Blob([data as Uint8Array], { type: formatMime[outputFormat] });
           const url = URL.createObjectURL(blob);
-          const outName = item.file.name.replace(/\.[^/.]+$/, '') + '_compressed.mp4';
+          const baseName = customFilename.trim() || item.file.name.replace(/\.[^/.]+$/, '') + '_compressed';
+          const outName = `${baseName}.${outputExt}`;
           const isOptimized = blob.size >= item.file.size;
 
           setQueue((prev) => prev.map((it, idx) => idx === i ? {
@@ -367,7 +412,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
       setCurrentQueueIndex(-1);
       setEta(null);
     }
-  }, [queue, preset, loadFFmpeg, onProgress, startElapsedTimer, stopElapsedTimer, buildCommand, t.errorCompress]);
+  }, [queue, preset, outputFormat, customFilename, loadFFmpeg, onProgress, startElapsedTimer, stopElapsedTimer, buildCommand, t.errorCompress]);
 
   const cancelQueue = useCallback(() => {
     queueCancelledRef.current = true;
@@ -641,6 +686,51 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
                 </button>
               );
             })}
+          </div>
+        </div>
+      )}
+
+      {/* Custom output settings — filename + format */}
+      {showQueue && !queueProcessing && stage !== 'compressing' && stage !== 'done' && stage !== 'loading' && (
+        <div className="mt-5 animate-fade-in">
+          <p className="mb-3 text-sm font-semibold text-slate-900 dark:text-white">{t.outputSettings}</p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {/* Custom filename */}
+            <div>
+              <label className="mb-1.5 block text-xs font-medium text-slate-500 dark:text-slate-400">{t.customFilename}</label>
+              <div className="flex items-center rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 focus-within:ring-2 focus-within:ring-sky-400">
+                <input
+                  type="text"
+                  value={customFilename}
+                  onChange={(e) => setCustomFilename(e.target.value)}
+                  placeholder={queue[0]?.file.name.replace(/\.[^/.]+$/, '') + '_compressed' || 'filename'}
+                  className="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none dark:text-white"
+                />
+                <span className="shrink-0 px-3 text-sm font-medium text-slate-400 dark:text-slate-500">.{outputFormat}</span>
+              </div>
+            </div>
+            {/* Output format */}
+            <div>
+              <label className="mb-1.5 block text-xs font-medium text-slate-500 dark:text-slate-400">{t.outputFormat}</label>
+              <div className="grid grid-cols-3 gap-2">
+                {(['mp4', 'mkv', 'webm'] as OutputFormat[]).map((fmt) => (
+                  <button
+                    key={fmt}
+                    onClick={() => setOutputFormat(fmt)}
+                    disabled={isWorking}
+                    className={cn(
+                      'rounded-xl border-2 px-3 py-2.5 text-sm font-semibold uppercase transition-all duration-200',
+                      outputFormat === fmt
+                        ? 'border-sky-400 bg-sky-50 text-sky-700 ring-2 ring-sky-300 dark:border-sky-600 dark:bg-sky-950/30 dark:text-sky-400'
+                        : 'border-slate-200 bg-white/50 text-slate-600 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/50 dark:text-slate-400 dark:hover:border-slate-700',
+                      isWorking && 'opacity-50 cursor-not-allowed',
+                    )}
+                  >
+                    {fmt}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
