@@ -900,7 +900,7 @@ export const dictionaries = {
       featuresTitle: 'Pourquoi VideoShrink ?',
       feature1Title: '100% Privé',
       feature1Desc:
-        'Vos fichiers sont traités entièrement sur votre appareil. Rien n'est uploadé vers un serveur.',
+        'Vos fichiers sont traités entièrement sur votre appareil. Rien n\'est uploadé vers un serveur.',
       feature2Title: 'Gratuit pour toujours',
       feature2Desc: 'Sans inscription, sans filigrane, sans limite. Compressez autant de vidéos que vous voulez.',
       feature3Title: 'Fonctionne partout',
@@ -916,7 +916,7 @@ export const dictionaries = {
       title: 'Compresser votre vidéo',
       subtitle: 'Sélectionnez un fichier, choisissez un préréglage et téléchargez une version plus petite.',
       dropHere: 'Touchez pour sélectionner une vidéo ou glissez-déposez-la ici',
-      dropHint: 'MP4, MOV, WebM, AVI — jusqu'à 2 Go',
+      dropHint: 'MP4, MOV, WebM, AVI — jusqu\'à 2 Go',
       selected: 'Fichier sélectionné',
       changeFile: 'Changer de fichier',
       preset: 'Préréglage de compression',
@@ -956,8 +956,8 @@ export const dictionaries = {
       stepCompress: 'Étape 2 sur 2 : Compression',
       alreadyOptimized: 'Cette vidéo est déjà optimisée',
       alreadyOptimizedHint:
-        'Le fichier compressé serait plus grand que l'original. Votre vidéo est déjà efficacement compressée — aucune réduction supplémentaire n'est possible.',
-      useOriginal: 'Télécharger l'original à la place',
+        'Le fichier compressé serait plus grand que l\'original. Votre vidéo est déjà efficacement compressée — aucune réduction supplémentaire n\'est possible.',
+      useOriginal: 'Télécharger l\'original à la place',
       batchTitle: 'Compression par lot',
       batchHint: 'Sélectionnez plusieurs vidéos et compressez-les toutes à la fois',
       addMore: 'Ajouter des vidéos',
@@ -978,7 +978,7 @@ export const dictionaries = {
       connectingDrive: 'Connexion à Google Drive…',
       uploadingToDrive: 'Upload vers Google Drive…',
       driveUploadSuccess: 'Enregistré sur Google Drive',
-      driveUploadError: 'Échec de l'upload vers Google Drive',
+      driveUploadError: 'Échec de l\'upload vers Google Drive',
       driveConnectError: 'Impossible de se connecter à Google Drive. Veuillez réessayer.',
       driveLoginPrompt: 'Connectez-vous avec Google pour uploader sur votre Drive',
       signInGoogle: 'Se connecter avec Google',
@@ -988,7 +988,7 @@ export const dictionaries = {
       iphoneTitle: 'Comment réduire la taille des vidéos iPhone — Guide complet',
       iphoneLastUpdated: 'Dernière mise à jour : octobre 2026',
       iphoneIntro:
-        'Les vidéos iPhone enregistrées en 4K ou 1080p peuvent facilement atteindre des centaines de mégaoctets. Que vous vouliez envoyer une vidéo par email, la publier sur les réseaux sociaux ou libérer du stockage — ce guide montre le moyen le plus simple de réduire la taille des vidéos iPhone sans installer d'application.',
+        'Les vidéos iPhone enregistrées en 4K ou 1080p peuvent facilement atteindre des centaines de mégaoctets. Que vous vouliez envoyer une vidéo par email, la publier sur les réseaux sociaux ou libérer du stockage — ce guide montre le moyen le plus simple de réduire la taille des vidéos iPhone sans installer d\'application.',
       iphoneTOC: 'Dans ce guide',
       adsByGoogle: 'Annonces Google',
       backToGuides: 'Retour à tous les guides',
@@ -1000,12 +1000,12 @@ export const dictionaries = {
       howTitle: 'Comment ça fonctionne ?',
       howDesc:
         'Lorsque vous sélectionnez une vidéo, VideoShrink charge le moteur FFmpeg dans votre navigateur et exécute toute la compression localement avec WebAssembly. Votre fichier vidéo ne quitte jamais votre téléphone ou ordinateur.',
-      privacyTitle: 'Confidentialité d'abord',
+      privacyTitle: 'Confidentialité d\'abord',
       privacyDesc:
-        'Puisque tout se passe sur votre appareil, nous n'avons pas accès à vos vidéos. Nous ne stockons, ne téléchargeons et ne voyons vos fichiers à aucun moment.',
-      freeTitle: 'Pourquoi c'est gratuit ?',
+        'Puisque tout se passe sur votre appareil, nous n\'avons pas accès à vos vidéos. Nous ne stockons, ne téléchargeons et ne voyons vos fichiers à aucun moment.',
+      freeTitle: 'Pourquoi c\'est gratuit ?',
       freeDesc:
-        'VideoShrink est financé par la publicité. Le moteur de compression s'exécute sur votre propre appareil, donc nous n'avons aucun coût de serveur.',
+        'VideoShrink est financé par la publicité. Le moteur de compression s\'exécute sur votre propre appareil, donc nous n\'avons aucun coût de serveur.',
     },
     privacy: {
       title: 'Politique de Confidentialité',
@@ -1017,17 +1017,17 @@ export const dictionaries = {
         'VideoShrink traite toute la compression vidéo dans votre navigateur avec WebAssembly. Vos fichiers vidéo ne sont jamais uploadés vers un serveur. Nous ne pouvons pas voir, accéder ou stocker vos vidéos.',
       analyticsTitle: 'Analytique et cookies',
       analyticsDesc:
-        'Nous pouvons utiliser des services d'analyse tiers (comme Google Analytics) pour comprendre le trafic du site. Ces services peuvent utiliser des cookies pour collecter des données d'utilisation anonymes. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur.',
+        'Nous pouvons utiliser des services d\'analyse tiers (comme Google Analytics) pour comprendre le trafic du site. Ces services peuvent utiliser des cookies pour collecter des données d\'utilisation anonymes. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur.',
       adsTitle: 'Publicité',
       adsDesc:
-        'Ce site web peut afficher des publicités servies par Google AdSense. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces basées sur vos visites précédentes sur ce site ou d'autres sites. Vous pouvez désactiver la publicité personnalisée dans les Paramètres des Annonces Google.',
+        'Ce site web peut afficher des publicités servies par Google AdSense. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces basées sur vos visites précédentes sur ce site ou d\'autres sites. Vous pouvez désactiver la publicité personnalisée dans les Paramètres des Annonces Google.',
       contactTitle: 'Contact',
       contactDesc: 'Si vous avez des questions sur cette Politique de Confidentialité, contactez-nous.',
     },
     terms: {
-      title: 'Conditions d'Utilisation',
+      title: 'Conditions d\'Utilisation',
       lastUpdated: 'Dernière mise à jour : octobre 2026',
-      intro: 'Ces Conditions d'Utilisation régissent votre utilisation de VideoShrink. En utilisant ce site web, vous acceptez ces conditions.',
+      intro: 'Ces Conditions d\'Utilisation régissent votre utilisation de VideoShrink. En utilisant ce site web, vous acceptez ces conditions.',
       useTitle: 'Utilisation du service',
       useDesc:
         'VideoShrink est fourni comme un outil gratuit pour un usage personnel et commercial. Vous êtes responsable du contenu que vous compressez et devez vous assurer que vous en avez le droit.',
@@ -1036,15 +1036,15 @@ export const dictionaries = {
         'Le service est fourni « tel quel » sans aucune garantie. Nous ne garantissons pas que la compression sera toujours disponible ou produira les résultats souhaités.',
       liabilityTitle: 'Limitation de responsabilité',
       liabilityDesc:
-        'VideoShrink n'est pas responsable de toute perte de données ou dommage résultant de l'utilisation de ce service. Conservez toujours des sauvegardes de vos fichiers originaux.',
+        'VideoShrink n\'est pas responsable de toute perte de données ou dommage résultant de l\'utilisation de ce service. Conservez toujours des sauvegardes de vos fichiers originaux.',
       changesTitle: 'Modifications de ces conditions',
       changesDesc:
-        'Nous pouvons mettre à jour ces Conditions d'Utilisation à tout moment. L'utilisation continue du site web constitue l'acceptation des conditions mises à jour.',
+        'Nous pouvons mettre à jour ces Conditions d\'Utilisation à tout moment. L\'utilisation continue du site web constitue l\'acceptation des conditions mises à jour.',
     },
     notFound: {
       title: 'Page non trouvée',
-      desc: 'La page que vous recherchez n'existe pas.',
-      back: 'Retour à l'accueil',
+      desc: 'La page que vous recherchez n\'existe pas.',
+      back: 'Retour à l\'accueil',
     },
   },
   zh: {
