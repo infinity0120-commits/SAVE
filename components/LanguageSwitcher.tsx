@@ -4,14 +4,13 @@ import { useState, useRef, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Globe, Check, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { locales, type Locale } from '@/lib/i18n-config';
+import { locales, localeLabels, type Locale } from '@/lib/i18n-config';
 
 interface LanguageSwitcherProps {
   currentLocale: Locale;
-  labels: { en: string; ko: string };
 }
 
-export function LanguageSwitcher({ currentLocale, labels }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -45,7 +44,7 @@ export function LanguageSwitcher({ currentLocale, labels }: LanguageSwitcherProp
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-        aria-label={labels[currentLocale]}
+        aria-label={localeLabels[currentLocale]}
         aria-expanded={open}
       >
         <Globe className="h-4 w-4" />
@@ -53,7 +52,7 @@ export function LanguageSwitcher({ currentLocale, labels }: LanguageSwitcherProp
         <ChevronDown className={cn('h-3 w-3 transition-transform', open && 'rotate-180')} />
       </button>
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-36 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-900">
+        <div className="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-900">
           {locales.map((locale) => (
             <button
               key={locale}
@@ -65,7 +64,7 @@ export function LanguageSwitcher({ currentLocale, labels }: LanguageSwitcherProp
                   : 'text-slate-700 dark:text-slate-300',
               )}
             >
-              <span>{labels[locale]}</span>
+              <span>{localeLabels[locale]}</span>
               {locale === currentLocale && <Check className="h-4 w-4" />}
             </button>
           ))}

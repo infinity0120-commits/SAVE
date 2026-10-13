@@ -28,7 +28,6 @@ export default function LocaleLayout({
           guides: dict.common.guides,
           about: dict.common.about,
         }}
-        langLabels={{ en: 'English', ko: '한국어' }}
         appName={dict.common.appName}
       />
       <main className="flex-1">{children}</main>

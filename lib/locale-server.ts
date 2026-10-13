@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/lib/i18n-config';
-import { isLocale } from '@/lib/i18n-config';
+import { isLocale, locales } from '@/lib/i18n-config';
 import { getDictionary } from '@/lib/get-dictionary';
 import type { Dictionary } from '@/lib/get-dictionary';
 
@@ -13,7 +13,4 @@ export async function getLocaleProps(params: { locale: string }): Promise<{
   return { locale, dict: getDictionary(locale) };
 }
 
-export const localeParams = [
-  { locale: 'en' },
-  { locale: 'ko' },
-];
+export const localeParams = locales.map((locale) => ({ locale }));

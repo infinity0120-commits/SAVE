@@ -15,11 +15,10 @@ interface HeaderProps {
     guides: string;
     about: string;
   };
-  langLabels: { en: string; ko: string };
   appName: string;
 }
 
-export function Header({ locale, nav, langLabels, appName }: HeaderProps) {
+export function Header({ locale, nav, appName }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
@@ -67,7 +66,7 @@ export function Header({ locale, nav, langLabels, appName }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-1">
-          <LanguageSwitcher currentLocale={locale} labels={langLabels} />
+          <LanguageSwitcher currentLocale={locale} />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="rounded-lg p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 md:hidden"
