@@ -88,14 +88,18 @@ export async function initGoogleDrive(): Promise<void> {
   await waitForGoogleIdentityServices();
 
   const gapi = (window as any).gapi;
-  if (!gapi?.load || !gapi?.client) {
-    throw new Error('Google API client did not finish loading.');
+  if (!gapi?.load) {
+    throw new Error('Google API loader did not finish loading.');
   }
 
   await new Promise<void>((resolve, reject) => {
     const timeout = window.setTimeout(() => reject(new Error('Google API client initialization timed out.')), 30000);
     gapi.load('client', () => {
       window.clearTimeout(timeout);
+      if (!gapi.client) {
+        reject(new Error('Google API client did not finish loading.'));
+        return;
+      }
       resolve();
     });
   });
