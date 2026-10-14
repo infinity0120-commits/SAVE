@@ -43,6 +43,8 @@ export default function LocaleLayout({
           terms: dict.common.terms,
         }}
         rights={dict.common.footerRights}
+        privacy={dict.privacy}
+        terms={dict.terms}
       />
     </div>
   );

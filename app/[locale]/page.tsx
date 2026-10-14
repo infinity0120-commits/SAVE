@@ -5,6 +5,7 @@ import { locales, isLocale } from '@/lib/i18n-config';
 import { getDictionary } from '@/lib/get-dictionary';
 import { VideoCompressor } from '@/components/VideoCompressor';
 import { AdBanner } from '@/components/AdBanner';
+import { InfoSections } from '@/components/InfoSections';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -25,6 +26,11 @@ export async function generateMetadata({
       languages: {
         en: '/en',
         ko: '/ko',
+        ja: '/ja',
+        es: '/es',
+        de: '/de',
+        fr: '/fr',
+        zh: '/zh',
       },
     },
   };
@@ -149,6 +155,11 @@ export default function HomePage({ params }: { params: { locale: string } }) {
           </Link>
         </div>
       </section>
+
+      {/* Info sections: how it works detail, step-by-step, FAQ */}
+      <div className="mt-12 md:mt-16">
+        <InfoSections dict={h} />
+      </div>
 
       {/* SEO text */}
       <section className="mt-12 md:mt-16">
