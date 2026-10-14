@@ -78,7 +78,10 @@ export async function requestDriveAccess(): Promise<string> {
       settled = true;
       clearTimeout(timeout);
       if (resp.error) {
-        reject(new Error(resp.error));
+        const errorMessage = resp.error === 'origin_mismatch'
+          ? 'Google OAuth origin mismatch. Add this website origin to Authorized JavaScript origins in Google Cloud Console.'
+          : `Google sign-in failed: ${resp.error}`;
+        reject(new Error(errorMessage));
         return;
       }
       accessToken = resp.access_token;
