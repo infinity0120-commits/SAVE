@@ -460,6 +460,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
       setDriveConnected(true);
       return true;
     } catch (err) {
+      console.error('Google Drive connection failed:', err);
       const msg = err instanceof Error ? err.message : t.driveConnectError;
       setDriveError(msg);
       setTimeout(() => setDriveError(null), 6000);
@@ -498,6 +499,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
       URL.revokeObjectURL(item.outputUrl);
       setQueue((prev) => prev.map((it) => it.id === id ? { ...it, outputUrl: null } : it));
     } catch (err) {
+      console.error('Google Drive upload failed:', err);
       const msg = err instanceof Error ? err.message : t.driveUploadError;
       setDriveError(msg);
       setTimeout(() => setDriveError(null), 6000);

@@ -4,49 +4,116 @@ const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '';
 const DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.file';
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
 
-let tokenClient: any = null;
+interface GoogleTokenResponse {
+  access_token?: string;
+  error?: string;
+  error_description?: string;
+  error_uri?: string;
+}
+
+interface GoogleTokenClient {
+  callback: (response: GoogleTokenResponse) => void;
+  requestAccessToken: (options: { prompt: string }) => void;
+}
+
+let tokenClient: GoogleTokenClient | null = null;
 let accessToken: string | null = null;
 let gapiReady = false;
 
 function loadScript(src: string): Promise<void> {
   return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) {
-      resolve();
+    const existing = document.querySelector<HTMLScriptElement>(`script[src="${src}"]`);
+    const script = existing || document.createElement('script');
+    let settled = false;
+    const finish = (error?: Error) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      script.removeEventListener('load', onLoad);
+      script.removeEventListener('error', onError);
+      error ? reject(error) : resolve();
+    };
+    const onLoad = () => finish();
+    const onError = () => finish(new Error(`Failed to load ${src}`));
+    const timeout = setTimeout(() => finish(new Error(`Timeout loading ${src}`)), 30000);
+
+    if (existing) {
+      const googleReady = src.includes('gsi/client') && (window as any).google?.accounts?.oauth2?.initTokenClient;
+      const gapiReadyNow = src.includes('apis.google.com/js/api.js') && (window as any).gapi?.load;
+      if (googleReady || gapiReadyNow) {
+        finish();
+        return;
+      }
+      script.addEventListener('load', onLoad, { once: true });
+      script.addEventListener('error', onError, { once: true });
       return;
     }
-    const script = document.createElement('script');
+
     script.src = src;
     script.async = true;
     script.defer = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error(`Failed to load ${src}`));
+    script.addEventListener('load', onLoad, { once: true });
+    script.addEventListener('error', onError, { once: true });
     document.head.appendChild(script);
-    setTimeout(() => reject(new Error(`Timeout loading ${src}`)), 30000);
+  });
+}
+
+function waitForGoogleIdentityServices(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const startedAt = Date.now();
+    const check = () => {
+      const googleApi = (window as any).google;
+      if (googleApi?.accounts?.oauth2?.initTokenClient) {
+        resolve();
+        return;
+      }
+      if (Date.now() - startedAt >= 30000) {
+        reject(new Error('Google Identity Services did not finish loading.'));
+        return;
+      }
+      window.setTimeout(check, 50);
+    };
+    check();
   });
 }
 
 export async function initGoogleDrive(): Promise<void> {
-  if (gapiReady) return;
+  if (gapiReady && tokenClient) return;
+  if (!GOOGLE_CLIENT_ID) {
+    throw new Error('Google Drive client ID is not configured.');
+  }
+
   await loadScript('https://apis.google.com/js/api.js');
   await loadScript('https://accounts.google.com/gsi/client');
+  await waitForGoogleIdentityServices();
+
+  const gapi = (window as any).gapi;
+  if (!gapi?.load || !gapi?.client) {
+    throw new Error('Google API client did not finish loading.');
+  }
 
   await new Promise<void>((resolve, reject) => {
-    const timeout = setTimeout(() => reject(new Error('gapi.load timeout')), 30000);
-    (window as any).gapi.load('client', () => {
-      clearTimeout(timeout);
+    const timeout = window.setTimeout(() => reject(new Error('Google API client initialization timed out.')), 30000);
+    gapi.load('client', () => {
+      window.clearTimeout(timeout);
       resolve();
     });
   });
 
-  await (window as any).gapi.client.init({
+  await gapi.client.init({
     discoveryDocs: [DISCOVERY_DOC],
   });
 
-  tokenClient = (window as any).google.accounts.oauth2.initTokenClient({
+  const googleApi = (window as any).google;
+  tokenClient = googleApi.accounts.oauth2.initTokenClient({
     client_id: GOOGLE_CLIENT_ID,
     scope: DRIVE_SCOPE,
     callback: () => {},
   });
+
+  if (!tokenClient) {
+    throw new Error('Google Identity Services token client could not be created.');
+  }
 
   gapiReady = true;
 }
@@ -63,6 +130,7 @@ export async function requestDriveAccess(): Promise<string> {
       reject(new Error('Google client not initialized'));
       return;
     }
+    const client = tokenClient;
 
     let settled = false;
 
@@ -73,24 +141,42 @@ export async function requestDriveAccess(): Promise<string> {
       }
     }, 60000);
 
-    tokenClient.callback = (resp: any) => {
+    tokenClient.callback = (resp: GoogleTokenResponse) => {
+      const safeResponse = resp
+        ? { ...resp, access_token: resp.access_token ? '[redacted]' : undefined }
+        : resp;
+      console.log('GIS Response:', safeResponse);
+
       if (settled) return;
       settled = true;
       clearTimeout(timeout);
+
+      if (!resp) {
+        reject(new Error('Google returned no authentication response. The popup may have been closed.'));
+        return;
+      }
+
       if (resp.error) {
         const errorMessage = resp.error === 'origin_mismatch'
           ? 'Google OAuth origin mismatch. Add this website origin to Authorized JavaScript origins in Google Cloud Console.'
-          : `Google sign-in failed: ${resp.error}`;
+          : `Google sign-in failed: ${resp.error_description || resp.error}`;
         reject(new Error(errorMessage));
         return;
       }
+
+      if (!resp.access_token) {
+        reject(new Error('Google authentication completed without an access token.'));
+        return;
+      }
+
       accessToken = resp.access_token;
       resolve(resp.access_token);
     };
 
     try {
-      tokenClient.requestAccessToken({ prompt: 'consent' });
-    } catch {
+      client.requestAccessToken({ prompt: 'consent' });
+    } catch (error) {
+      console.error('GIS requestAccessToken failed:', error);
       if (!settled) {
         settled = true;
         clearTimeout(timeout);
