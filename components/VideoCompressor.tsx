@@ -31,7 +31,6 @@ import {
   initGoogleDrive,
   requestDriveAccess,
   uploadToDrive,
-  isGoogleDriveConfigured,
   hasDriveAccess,
 } from '@/lib/google-drive';
 
@@ -45,6 +44,8 @@ const formatMime: Record<OutputFormat, string> = {
   mkv: 'video/x-matroska',
   webm: 'video/webm',
 };
+
+const GOOGLE_DRIVE_UI_ENABLED = false;
 
 const formatCodecs: Record<OutputFormat, { vcodec: string; acodec: string; extra: string[] }> = {
   mp4: { vcodec: 'libx264', acodec: 'aac', extra: ['-movflags', '+faststart'] },
@@ -143,7 +144,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
   const [driveConnected, setDriveConnected] = useState(false);
   const [driveConnecting, setDriveConnecting] = useState(false);
   const [driveError, setDriveError] = useState<string | null>(null);
-  const [driveConfigured] = useState(() => isGoogleDriveConfigured());
+  const [driveConfigured] = useState(() => GOOGLE_DRIVE_UI_ENABLED);
 
   const ffmpegRef = useRef<FFmpeg | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
