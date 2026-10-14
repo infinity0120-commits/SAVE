@@ -1,6 +1,6 @@
 {
-  "name": "VideoShrink — Free Video Compressor",
-  "short_name": "VideoShrink",
+  "name": "ZipStor — Free Video Compressor",
+  "short_name": "ZipStor",
   "description": "Compress videos right in your browser. No uploads, 100% private, free forever.",
   "start_url": "/en",
   "display": "standalone",

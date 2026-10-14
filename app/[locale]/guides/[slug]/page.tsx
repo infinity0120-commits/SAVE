@@ -21,13 +21,13 @@ export async function generateMetadata({
   const dict = getDictionary(params.locale);
   if (params.locale === 'ko') {
     return {
-      title: '아이폰 동영상 용량 줄이기 완벽 가이드 — VideoShrink',
+      title: '아이폰 동영상 용량 줄이기 완벽 가이드 — ZipStor',
       description:
         '아이폰 동영상 용량을 줄이는 5가지 방법을 알아보세요. 앱 설치 없이 브라우저에서 바로 압축, 화질 손실 최소화, 이메일 전송, 저장 공간 확보까지.',
     };
   }
   return {
-    title: 'How to Reduce iPhone Video File Size — Complete Guide | VideoShrink',
+    title: 'How to Reduce iPhone Video File Size — Complete Guide | ZipStor',
     description:
       'Learn 5 proven ways to reduce iPhone video file size without losing quality. Compress directly in your browser, no apps, no uploads. Free and private.',
   };
@@ -162,7 +162,7 @@ function EnglishContent({ locale }: { locale: string }) {
         </h2>
         <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
           The fastest and most private way to shrink an iPhone video is to use a
-          browser-based tool like <strong>VideoShrink</strong>. It runs FFmpeg compiled
+          browser-based tool like <strong>ZipStor</strong>. It runs FFmpeg compiled
           to WebAssembly directly in your browser — meaning your video never gets
           uploaded to any server. You simply open the website on your iPhone, select the
           video from your photo library, pick a compression preset, and download the
@@ -171,7 +171,7 @@ function EnglishContent({ locale }: { locale: string }) {
         <div className="mt-4 rounded-xl border border-sky-200 bg-sky-50/50 p-5 dark:border-sky-900 dark:bg-sky-950/20">
           <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">Steps:</h3>
           <ol className="ml-4 list-decimal space-y-2 text-sm text-slate-700 dark:text-slate-300">
-            <li>Open <Link href={`/${locale}`} className="text-sky-600 underline">VideoShrink</Link> in Safari or Chrome on your iPhone</li>
+            <li>Open <Link href={`/${locale}`} className="text-sky-600 underline">ZipStor</Link> in Safari or Chrome on your iPhone</li>
             <li>Tap the upload area and select a video from your photo library</li>
             <li>Choose a preset: <strong>Fast 720p</strong> for quick sharing, <strong>High Quality 1080p</strong> for best balance, or <strong>Target size &lt; 100 MB</strong> for email</li>
             <li>Tap "Start Compression" and wait for the progress bar to complete</li>
@@ -234,7 +234,7 @@ function EnglishContent({ locale }: { locale: string }) {
           Some websites offer video compression by uploading your file to their servers.
           While effective, this raises <strong>privacy concerns</strong> — your video
           leaves your device and is processed on someone else's computer. Browser-based
-          tools like VideoShrink that use WebAssembly are strictly better for privacy
+          tools like ZipStor that use WebAssembly are strictly better for privacy
           because the file never leaves your phone.
         </p>
       </section>
@@ -245,7 +245,7 @@ function EnglishContent({ locale }: { locale: string }) {
         </h2>
         <div className="space-y-2">
           {[
-            'For one-time compression, use VideoShrink — fast, private, no app needed',
+            'For one-time compression, use ZipStor — fast, private, no app needed',
             'For future recordings, lower your iPhone camera resolution in Settings',
             'Avoid email-based compression — quality is too low',
             'Be cautious with cloud services — your videos leave your device',
@@ -321,7 +321,7 @@ function KoreanContent({ locale }: { locale: string }) {
         </h2>
         <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
           아이폰 동영상 용량을 줄이는 가장 빠르고 안전한 방법은
-          <strong> VideoShrink</strong> 같은 브라우저 기반 도구를 사용하는
+          <strong> ZipStor</strong> 같은 브라우저 기반 도구를 사용하는
           것입니다. FFmpeg를 WebAssembly로 브라우저에서 직접 실행하므로 동영상이
           어떤 서버에도 업로드되지 않습니다. 아이폰에서 웹사이트를 열고, 사진
           앨범에서 동영상을 선택하고, 압축 프리셋을 고르고, 더 작은 파일을
@@ -330,7 +330,7 @@ function KoreanContent({ locale }: { locale: string }) {
         <div className="mt-4 rounded-xl border border-sky-200 bg-sky-50/50 p-5 dark:border-sky-900 dark:bg-sky-950/20">
           <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">사용 순서:</h3>
           <ol className="ml-4 list-decimal space-y-2 text-sm text-slate-700 dark:text-slate-300">
-            <li>아이폰 사파리 또는 크롬에서 <Link href={`/${locale}`} className="text-sky-600 underline">VideoShrink</Link> 열기</li>
+            <li>아이폰 사파리 또는 크롬에서 <Link href={`/${locale}`} className="text-sky-600 underline">ZipStor</Link> 열기</li>
             <li>업로드 영역을 탭하고 사진 앨범에서 동영상 선택</li>
             <li>프리셋 선택: <strong>빠른 720p</strong>(빠른 공유), <strong>고화질 1080p</strong>(최적 균형), <strong>목표 용량 &lt; 100 MB</strong>(이메일용)</li>
             <li>"압축 시작"을 탭하고 진행률 바가 완료될 때까지 대기</li>
@@ -392,7 +392,7 @@ function KoreanContent({ locale }: { locale: string }) {
         <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
           일부 웹사이트는 파일을 서버에 업로드하여 압축합니다. 효과적이지만
           <strong> 프라이버시 우려</strong>가 있습니다 — 동영상이 기기를 떠나 다른
-          사람의 컴퓨터에서 처리됩니다. WebAssembly를 사용하는 VideoShrink 같은
+          사람의 컴퓨터에서 처리됩니다. WebAssembly를 사용하는 ZipStor 같은
           브라우저 도구가 프라이버시 측면에서 확실히 우수합니다. 파일이 폰에서
           절대 떠나지 않기 때문입니다.
         </p>
@@ -404,7 +404,7 @@ function KoreanContent({ locale }: { locale: string }) {
         </h2>
         <div className="space-y-2">
           {[
-            '일회성 압축에는 VideoShrink 사용 — 빠르고, 안전하고, 앱 불필요',
+            '일회성 압축에는 ZipStor 사용 — 빠르고, 안전하고, 앱 불필요',
             '향후 촬영을 위해 아이폰 카메라 해상도를 설정에서 낮추기',
             '이메일 기반 압축은 피하기 — 화질이 너무 낮음',
             '클라우드 서비스는 주의 — 동영상이 기기를 떠남',

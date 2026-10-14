@@ -1,7 +1,7 @@
 export const dictionaries = {
   en: {
     common: {
-      appName: 'VideoShrink',
+      appName: 'ZipStor',
       tagline: 'Compress videos on your phone — no upload, 100% private',
       home: 'Home',
       guides: 'Guides',
@@ -23,7 +23,7 @@ export const dictionaries = {
       step2Desc: 'Choose Fast 720p, High Quality 1080p, or a target file size.',
       step3Title: 'Download',
       step3Desc: 'Watch progress in real-time, then save your compressed video.',
-      featuresTitle: 'Why VideoShrink?',
+      featuresTitle: 'Why ZipStor?',
       feature1Title: '100% Private',
       feature1Desc:
         'Your files are processed entirely on your device. Nothing is uploaded to a server.',
@@ -34,13 +34,13 @@ export const dictionaries = {
         'Runs on any modern browser — iPhone, Android, Mac, or PC. No app install needed.',
       seoTitle: 'Reduce iPhone Video File Size — Free Online Compressor',
       seoDescription:
-        'Learn how to reduce iPhone video file size without losing quality. VideoShrink compresses your videos right in the browser — no uploads, no apps, completely free.',
+        'Learn how to reduce iPhone video file size without losing quality. ZipStor compresses your videos right in the browser — no uploads, no apps, completely free.',
       guideLinksTitle: 'Helpful Guides',
       guideLink1: 'How to Reduce iPhone Video File Size',
       // Info sections
-      howDetailTitle: 'How VideoShrink Works',
+      howDetailTitle: 'How ZipStor Works',
       howDetailDesc:
-        'VideoShrink uses WebAssembly (FFmpeg.wasm) to run the entire video compression process inside your browser. Your video files never leave your device — they are processed 100% locally in your browser memory. This means zero uploads, zero server processing, and complete data privacy.',
+        'ZipStor uses WebAssembly (FFmpeg.wasm) to run the entire video compression process inside your browser. Your video files never leave your device — they are processed 100% locally in your browser memory. This means zero uploads, zero server processing, and complete data privacy.',
       howDetailSecurity: 'No server uploads, no third-party processing. Your data stays on your device.',
       stepGuideTitle: 'Step-by-Step Guide',
       stepGuide1: 'Select your video file — tap the upload area or drag & drop a file from your device.',
@@ -50,7 +50,7 @@ export const dictionaries = {
       faq1Q: 'Are my videos stored on a server?',
       faq1A: 'No. 100% of the processing happens in your browser memory. Your videos are never uploaded to any server.',
       faq2Q: 'What video formats are supported?',
-      faq2A: 'VideoShrink supports MP4, MOV, WebM, AVI, and other major formats. You can export as MP4, MKV, or WebM.',
+      faq2A: 'ZipStor supports MP4, MOV, WebM, AVI, and other major formats. You can export as MP4, MKV, or WebM.',
       faq3Q: 'Is the Google Drive integration safe?',
       faq3A: 'Yes. We use official Google OAuth 2.0 authentication and only request the minimum file access permission needed to upload your compressed video.',
     },
@@ -138,27 +138,27 @@ export const dictionaries = {
       backToGuides: 'Back to all guides',
     },
     about: {
-      title: 'About VideoShrink',
+      title: 'About ZipStor',
       intro:
-        'VideoShrink is a free, browser-based video compression tool. It uses FFmpeg compiled to WebAssembly to process your videos entirely on your device — no uploads, no servers, no privacy concerns.',
+        'ZipStor is a free, browser-based video compression tool. It uses FFmpeg compiled to WebAssembly to process your videos entirely on your device — no uploads, no servers, no privacy concerns.',
       howTitle: 'How does it work?',
       howDesc:
-        'When you select a video, VideoShrink loads the FFmpeg engine into your browser and runs all compression locally using WebAssembly. Your video file never leaves your phone or computer.',
+        'When you select a video, ZipStor loads the FFmpeg engine into your browser and runs all compression locally using WebAssembly. Your video file never leaves your phone or computer.',
       privacyTitle: 'Privacy first',
       privacyDesc:
         'Because everything happens on your device, we have no access to your videos. We do not store, upload, or see your files at any point.',
       freeTitle: 'Why is it free?',
       freeDesc:
-        'VideoShrink is supported by ads. The compression engine runs on your own device, so we have no server costs to pass on to you.',
+        'ZipStor is supported by ads. The compression engine runs on your own device, so we have no server costs to pass on to you.',
     },
     privacy: {
       title: 'Privacy Policy',
       lastUpdated: 'Last updated: October 2026',
       intro:
-        'This Privacy Policy explains how VideoShrink handles your information. By using this website, you agree to the practices described below.',
+        'This Privacy Policy explains how ZipStor handles your information. By using this website, you agree to the practices described below.',
       noDataTitle: 'We do not collect your videos',
       noDataDesc:
-        'VideoShrink processes all video compression entirely in your browser using WebAssembly. Your video files are never uploaded to any server. We cannot see, access, or store your videos.',
+        'ZipStor processes all video compression entirely in your browser using WebAssembly. Your video files are never uploaded to any server. We cannot see, access, or store your videos.',
       analyticsTitle: 'Analytics and cookies',
       analyticsDesc:
         'We may use third-party analytics services (such as Google Analytics) to understand website traffic. These services may use cookies to collect anonymous usage data. You can disable cookies in your browser settings.',
@@ -172,16 +172,16 @@ export const dictionaries = {
       title: 'Terms of Service',
       lastUpdated: 'Last updated: October 2026',
       intro:
-        'These Terms of Service govern your use of VideoShrink. By using this website, you agree to these terms.',
+        'These Terms of Service govern your use of ZipStor. By using this website, you agree to these terms.',
       useTitle: 'Use of the service',
       useDesc:
-        'VideoShrink is provided as a free tool for personal and commercial use. You are responsible for the content you compress and for ensuring you have the right to do so.',
+        'ZipStor is provided as a free tool for personal and commercial use. You are responsible for the content you compress and for ensuring you have the right to do so.',
       noWarrantyTitle: 'No warranty',
       noWarrantyDesc:
         'The service is provided "as is" without any warranty. We do not guarantee that compression will always be available or produce the desired results.',
       liabilityTitle: 'Limitation of liability',
       liabilityDesc:
-        'VideoShrink is not liable for any data loss or damage resulting from the use of this service. Always keep backups of your original files.',
+        'ZipStor is not liable for any data loss or damage resulting from the use of this service. Always keep backups of your original files.',
       changesTitle: 'Changes to these terms',
       changesDesc:
         'We may update these Terms of Service at any time. Continued use of the website constitutes acceptance of the updated terms.',
@@ -194,7 +194,7 @@ export const dictionaries = {
   },
   ko: {
     common: {
-      appName: 'VideoShrink',
+      appName: 'ZipStor',
       tagline: '내 폰에서 바로 동영상 압축 — 업로드 없이 100% 프라이빗',
       home: '홈',
       guides: '가이드',
@@ -216,7 +216,7 @@ export const dictionaries = {
       step2Desc: '빠른 720p, 고화질 1080p, 또는 목표 용량 중 선택하세요.',
       step3Title: '다운로드',
       step3Desc: '실시간 진행률을 확인하고 압축된 동영상을 저장하세요.',
-      featuresTitle: '왜 VideoShrink인가요?',
+      featuresTitle: '왜 ZipStor인가요?',
       feature1Title: '100% 프라이빗',
       feature1Desc:
         '모든 파일은 기기에서 처리됩니다. 서버로 어떠한 데이터도 업로드되지 않습니다.',
@@ -227,13 +227,13 @@ export const dictionaries = {
         '아이폰, 안드로이드, Mac, PC — 모든 최신 브라우저에서 실행됩니다. 앱 설치 불필요.',
       seoTitle: '아이폰 동영상 용량 줄이기 — 무료 온라인 압축기',
       seoDescription:
-        '화질 손실 없이 아이폰 동영상 용량을 줄이는 방법을 알아보세요. VideoShrink는 브라우저에서 바로 압축 — 업로드 없음, 앱 없음, 완전 무료.',
+        '화질 손실 없이 아이폰 동영상 용량을 줄이는 방법을 알아보세요. ZipStor는 브라우저에서 바로 압축 — 업로드 없음, 앱 없음, 완전 무료.',
       guideLinksTitle: '도움이 되는 가이드',
       guideLink1: '아이폰 동영상 용량 줄이는 방법',
       // 정보 섹션
-      howDetailTitle: 'VideoShrink 작동 원리',
+      howDetailTitle: 'ZipStor 작동 원리',
       howDetailDesc:
-        'VideoShrink는 WebAssembly(FFmpeg.wasm)를 사용하여 동영상 압축 과정 전체를 브라우저 내에서 실행합니다. 동영상 파일은 기기를 절대 떠나지 않으며, 브라우저 메모리에서 100% 로컬로 처리됩니다. 즉, 업로드 없음, 서버 처리 없음, 완전한 데이터 보안입니다.',
+        'ZipStor는 WebAssembly(FFmpeg.wasm)를 사용하여 동영상 압축 과정 전체를 브라우저 내에서 실행합니다. 동영상 파일은 기기를 절대 떠나지 않으며, 브라우저 메모리에서 100% 로컬로 처리됩니다. 즉, 업로드 없음, 서버 처리 없음, 완전한 데이터 보안입니다.',
       howDetailSecurity: '서버 업로드 없음, 제3자 처리 없음. 데이터는 기기에 그대로 남습니다.',
       stepGuideTitle: '단계별 이용 방법',
       stepGuide1: '동영상 파일 선택 — 업로드 영역을 탭하거나 기기에서 파일을 드래그 앤 드롭하세요.',
@@ -330,27 +330,27 @@ export const dictionaries = {
       backToGuides: '가이드 목록으로',
     },
     about: {
-      title: 'VideoShrink 소개',
+      title: 'ZipStor 소개',
       intro:
-        'VideoShrink는 무료 브라우저 기반 동영상 압축 도구입니다. FFmpeg를 WebAssembly로 컴파일하여 기기에서 직접 처리합니다 — 업로드 없음, 서버 없음, 걱정 없음.',
+        'ZipStor는 무료 브라우저 기반 동영상 압축 도구입니다. FFmpeg를 WebAssembly로 컴파일하여 기기에서 직접 처리합니다 — 업로드 없음, 서버 없음, 걱정 없음.',
       howTitle: '어떻게 작동하나요?',
       howDesc:
-        '동영상을 선택하면 VideoShrink가 FFmpeg 엔진을 브라우저에 로딩하고 WebAssembly로 모든 압축을 로컬에서 실행합니다. 동영상 파일은 폰이나 컴퓨터에서 절대 떠나지 않습니다.',
+        '동영상을 선택하면 ZipStor가 FFmpeg 엔진을 브라우저에 로딩하고 WebAssembly로 모든 압축을 로컬에서 실행합니다. 동영상 파일은 폰이나 컴퓨터에서 절대 떠나지 않습니다.',
       privacyTitle: '프라이버시 최우선',
       privacyDesc:
         '모든 것이 기기에서 처리되므로 우리는 동영상에 접근할 수 없습니다. 어떤 시점에서도 파일을 저장, 업로드, 열람하지 않습니다.',
       freeTitle: '왜 무료인가요?',
       freeDesc:
-        'VideoShrink는 광고로 운영됩니다. 압축 엔진이 사용자 기기에서 실행되므로 서버 비용이 들지 않습니다.',
+        'ZipStor는 광고로 운영됩니다. 압축 엔진이 사용자 기기에서 실행되므로 서버 비용이 들지 않습니다.',
     },
     privacy: {
       title: '개인정보처리방침',
       lastUpdated: '최종 업데이트: 2026년 10월',
       intro:
-        '이 개인정보처리방침은 VideoShrink가 정보를 어떻게 처리하는지 설명합니다. 이 웹사이트를 사용함으로써 아래 설명된 방침에 동의하게 됩니다.',
+        '이 개인정보처리방침은 ZipStor가 정보를 어떻게 처리하는지 설명합니다. 이 웹사이트를 사용함으로써 아래 설명된 방침에 동의하게 됩니다.',
       noDataTitle: '동영상을 수집하지 않습니다',
       noDataDesc:
-        'VideoShrink는 모든 동영상 압축을 브라우저에서 WebAssembly로 처리합니다. 동영상 파일은 어떤 서버에도 업로드되지 않습니다. 우리는 동영상을 보거나, 접근하거나, 저장할 수 없습니다.',
+        'ZipStor는 모든 동영상 압축을 브라우저에서 WebAssembly로 처리합니다. 동영상 파일은 어떤 서버에도 업로드되지 않습니다. 우리는 동영상을 보거나, 접근하거나, 저장할 수 없습니다.',
       analyticsTitle: '분석 및 쿠키',
       analyticsDesc:
         '웹사이트 트래픽을 이해하기 위해 서드파티 분석 서비스(예: Google Analytics)를 사용할 수 있습니다. 이 서비스들은 익명 사용 데이터를 수집하기 위해 쿠키를 사용할 수 있습니다. 브라우저 설정에서 쿠키를 비활성화할 수 있습니다.',
@@ -363,16 +363,16 @@ export const dictionaries = {
     terms: {
       title: '이용약관',
       lastUpdated: '최종 업데이트: 2026년 10월',
-      intro: '이 이용약관은 VideoShrink의 사용에 적용됩니다. 이 웹사이트를 사용함으로써 이 약관에 동의하게 됩니다.',
+      intro: '이 이용약관은 ZipStor의 사용에 적용됩니다. 이 웹사이트를 사용함으로써 이 약관에 동의하게 됩니다.',
       useTitle: '서비스 이용',
       useDesc:
-        'VideoShrink는 개인 및 상업적 용도로 무료로 제공됩니다. 압축하는 콘텐츠에 대해 책임이 있으며, 압축할 권리가 있는지 확인해야 합니다.',
+        'ZipStor는 개인 및 상업적 용도로 무료로 제공됩니다. 압축하는 콘텐츠에 대해 책임이 있으며, 압축할 권리가 있는지 확인해야 합니다.',
       noWarrantyTitle: '보증 없음',
       noWarrantyDesc:
         '서비스는 어떠한 보증 없이 "있는 그대로" 제공됩니다. 압축이 항상 사용 가능하거나 원하는 결과를 얻을 수 있다고 보장하지 않습니다.',
       liabilityTitle: '책임 제한',
       liabilityDesc:
-        'VideoShrink는 이 서비스 사용으로 인한 데이터 손실이나 손해에 대해 책임지지 않습니다. 원본 파일의 백업을 항상 보관하세요.',
+        'ZipStor는 이 서비스 사용으로 인한 데이터 손실이나 손해에 대해 책임지지 않습니다. 원본 파일의 백업을 항상 보관하세요.',
       changesTitle: '약관 변경',
       changesDesc:
         '이 이용약관은 언제든지 업데이트될 수 있습니다. 웹사이트를 계속 사용하면 업데이트된 약관에 동의한 것으로 간주됩니다.',
@@ -385,7 +385,7 @@ export const dictionaries = {
   },
   ja: {
     common: {
-      appName: 'VideoShrink',
+      appName: 'ZipStor',
       tagline: 'スマホで直接動画圧縮 — アップロード不要、100%プライベート',
       home: 'ホーム',
       guides: 'ガイド',
@@ -407,7 +407,7 @@ export const dictionaries = {
       step2Desc: '高速720p、高品質1080p、またはターゲットファイルサイズを選択。',
       step3Title: 'ダウンロード',
       step3Desc: 'リアルタイムの進捗を確認し、圧縮された動画を保存。',
-      featuresTitle: 'VideoShrinkを選ぶ理由',
+      featuresTitle: 'ZipStorを選ぶ理由',
       feature1Title: '100%プライベート',
       feature1Desc:
         'すべてのファイルはデバイス上で処理されます。サーバーには何もアップロードされません。',
@@ -418,13 +418,13 @@ export const dictionaries = {
         'iPhone、Android、Mac、PC — すべてのモダンブラウザで動作。アプリインストール不要。',
       seoTitle: 'iPhone動画のファイルサイズを削減 — 無料オンライン圧縄ツール',
       seoDescription:
-        '画質を落とさずiPhone動画のファイルサイズを削減する方法を学びましょう。VideoShrinkはブラウザで直接圧縮 — アップロード不要、アプリ不要、完全無料。',
+        '画質を落とさずiPhone動画のファイルサイズを削減する方法を学びましょう。ZipStorはブラウザで直接圧縮 — アップロード不要、アプリ不要、完全無料。',
       guideLinksTitle: '役立つガイド',
       guideLink1: 'iPhone動画のファイルサイズを削減する方法',
       // 情報セクション
-      howDetailTitle: 'VideoShrinkの仕組み',
+      howDetailTitle: 'ZipStorの仕組み',
       howDetailDesc:
-        'VideoShrinkはWebAssembly（FFmpeg.wasm）を使用し、動画圧縮プロセス全体をブラウザ内で実行します。動画ファイルはデバイスから絶対に離れず、ブラウザメモリ内で100%ローカル処理されます。アップロード不要、サーバー処理不要、完全なデータプライバシーを実現します。',
+        'ZipStorはWebAssembly（FFmpeg.wasm）を使用し、動画圧縮プロセス全体をブラウザ内で実行します。動画ファイルはデバイスから絶対に離れず、ブラウザメモリ内で100%ローカル処理されます。アップロード不要、サーバー処理不要、完全なデータプライバシーを実現します。',
       howDetailSecurity: 'サーバーアップロードなし、第三者処理なし。データはデバイスに留まります。',
       stepGuideTitle: 'ステップバイステップガイド',
       stepGuide1: '動画ファイルを選択 — アップロード領域をタップまたはデバイスからドラッグ＆ドロップ。',
@@ -520,27 +520,27 @@ export const dictionaries = {
       backToGuides: 'ガイド一覧に戻る',
     },
     about: {
-      title: 'VideoShrinkについて',
+      title: 'ZipStorについて',
       intro:
-        'VideoShrinkは無料のブラウザベース動画圧縄ツールです。FFmpegをWebAssemblyにコンパイルし、デバイス上で直接処理します — アップロード不要、サーバー不要、プライバシーの心配なし。',
+        'ZipStorは無料のブラウザベース動画圧縄ツールです。FFmpegをWebAssemblyにコンパイルし、デバイス上で直接処理します — アップロード不要、サーバー不要、プライバシーの心配なし。',
       howTitle: 'どうやって動作するの？',
       howDesc:
-        '動画を選択すると、VideoShrinkがFFmpegエンジンをブラウザに読み込み、WebAssemblyですべての圧縮をローカルで実行します。動画ファイルはスマホやPCから絶対に離れません。',
+        '動画を選択すると、ZipStorがFFmpegエンジンをブラウザに読み込み、WebAssemblyですべての圧縮をローカルで実行します。動画ファイルはスマホやPCから絶対に離れません。',
       privacyTitle: 'プライバシーファースト',
       privacyDesc:
         'すべてデバイス上で処理されるため、動画にアクセスできません。ファイルを保存、アップロード、閲覧することは一切ありません。',
       freeTitle: 'なぜ無料なの？',
       freeDesc:
-        'VideoShrinkは広告で運営されています。圧縮エンジンはユーザーのデバイスで実行されるため、サーバー費用がかかりません。',
+        'ZipStorは広告で運営されています。圧縮エンジンはユーザーのデバイスで実行されるため、サーバー費用がかかりません。',
     },
     privacy: {
       title: 'プライバシーポリシー',
       lastUpdated: '最終更新: 2026年10月',
       intro:
-        'このプライバシーポリシーはVideoShrinkが情報をどのように扱うかを説明します。このウェブサイトを使用することで、以下に記載された方針に同意したことになります。',
+        'このプライバシーポリシーはZipStorが情報をどのように扱うかを説明します。このウェブサイトを使用することで、以下に記載された方針に同意したことになります。',
       noDataTitle: '動画を収集しません',
       noDataDesc:
-        'VideoShrinkはすべての動画圧縮をブラウザ内のWebAssemblyで処理します。動画ファイルはいかなるサーバーにもアップロードされません。動画を閲覧、アクセス、保存することはできません。',
+        'ZipStorはすべての動画圧縮をブラウザ内のWebAssemblyで処理します。動画ファイルはいかなるサーバーにもアップロードされません。動画を閲覧、アクセス、保存することはできません。',
       analyticsTitle: '分析とCookie',
       analyticsDesc:
         'ウェブサイトトラフィックを理解するため、サードパーティの分析サービス（Google Analyticsなど）を使用する場合があります。これらのサービスは匿名の使用データを収集するためにCookieを使用する場合があります。ブラウザ設定でCookieを無効にできます。',
@@ -553,16 +553,16 @@ export const dictionaries = {
     terms: {
       title: '利用規約',
       lastUpdated: '最終更新: 2026年10月',
-      intro: 'この利用規約はVideoShrinkの使用に適用されます。このウェブサイトを使用することで、これらの規約に同意したことになります。',
+      intro: 'この利用規約はZipStorの使用に適用されます。このウェブサイトを使用することで、これらの規約に同意したことになります。',
       useTitle: 'サービスの利用',
       useDesc:
-        'VideoShrinkは個人および商用目的で無料で提供されます。圧縮するコンテンツについて責任を持ち、圧縮する権利があることを確認してください。',
+        'ZipStorは個人および商用目的で無料で提供されます。圧縮するコンテンツについて責任を持ち、圧縮する権利があることを確認してください。',
       noWarrantyTitle: '保証なし',
       noWarrantyDesc:
         'サービスは「現状のまま」いかなる保証もなく提供されます。圧縮が常に利用可能または希望する結果を得られることを保証しません。',
       liabilityTitle: '責任の制限',
       liabilityDesc:
-        'VideoShrinkはこのサービスの使用によるデータ損失や損害について責任を負いません。元のファイルのバックアップを常に保管してください。',
+        'ZipStorはこのサービスの使用によるデータ損失や損害について責任を負いません。元のファイルのバックアップを常に保管してください。',
       changesTitle: '規約の変更',
       changesDesc:
         'この利用規約はいつでも更新される場合があります。ウェブサイトの継続使用により、更新された規約に同意したとみなされます。',
@@ -575,7 +575,7 @@ export const dictionaries = {
   },
   es: {
     common: {
-      appName: 'VideoShrink',
+      appName: 'ZipStor',
       tagline: 'Comprime vídeos en tu teléfono — sin subidas, 100% privado',
       home: 'Inicio',
       guides: 'Guías',
@@ -597,7 +597,7 @@ export const dictionaries = {
       step2Desc: 'Elige Rápido 720p, Alta Calidad 1080p, o un tamaño objetivo.',
       step3Title: 'Descarga',
       step3Desc: 'Mira el progreso en tiempo real y guarda tu vídeo comprimido.',
-      featuresTitle: '¿Por qué VideoShrink?',
+      featuresTitle: '¿Por qué ZipStor?',
       feature1Title: '100% Privado',
       feature1Desc:
         'Tus archivos se procesan completamente en tu dispositivo. Nada se sube a un servidor.',
@@ -608,13 +608,13 @@ export const dictionaries = {
         'Funciona en cualquier navegador moderno — iPhone, Android, Mac o PC. Sin instalar apps.',
       seoTitle: 'Reducir el tamaño de vídeos iPhone — Compresor online gratis',
       seoDescription:
-        'Aprende cómo reducir el tamaño de vídeos iPhone sin perder calidad. VideoShrink comprime tus vídeos directamente en el navegador — sin subidas, sin apps, totalmente gratis.',
+        'Aprende cómo reducir el tamaño de vídeos iPhone sin perder calidad. ZipStor comprime tus vídeos directamente en el navegador — sin subidas, sin apps, totalmente gratis.',
       guideLinksTitle: 'Guías útiles',
       guideLink1: 'Cómo reducir el tamaño de vídeos iPhone',
       // Secciones de información
-      howDetailTitle: 'Cómo funciona VideoShrink',
+      howDetailTitle: 'Cómo funciona ZipStor',
       howDetailDesc:
-        'VideoShrink usa WebAssembly (FFmpeg.wasm) para ejecutar todo el proceso de compresión de vídeo dentro de tu navegador. Tus archivos de vídeo nunca salen de tu dispositivo — se procesan 100% localmente en la memoria de tu navegador. Esto significa cero subidas, cero procesamiento en servidores y privacidad de datos completa.',
+        'ZipStor usa WebAssembly (FFmpeg.wasm) para ejecutar todo el proceso de compresión de vídeo dentro de tu navegador. Tus archivos de vídeo nunca salen de tu dispositivo — se procesan 100% localmente en la memoria de tu navegador. Esto significa cero subidas, cero procesamiento en servidores y privacidad de datos completa.',
       howDetailSecurity: 'Sin subidas a servidores, sin procesamiento de terceros. Tus datos se quedan en tu dispositivo.',
       stepGuideTitle: 'Guía paso a paso',
       stepGuide1: 'Selecciona tu archivo de vídeo — toca el área de carga o arrastra y suelta un archivo desde tu dispositivo.',
@@ -624,7 +624,7 @@ export const dictionaries = {
       faq1Q: '¿Se almacenan mis vídeos en un servidor?',
       faq1A: 'No. El 100% del procesamiento ocurre en la memoria de tu navegador. Tus vídeos nunca se suben a ningún servidor.',
       faq2Q: '¿Qué formatos de vídeo se admiten?',
-      faq2A: 'VideoShrink admite MP4, MOV, WebM, AVI y otros formatos principales. Puedes exportar como MP4, MKV o WebM.',
+      faq2A: 'ZipStor admite MP4, MOV, WebM, AVI y otros formatos principales. Puedes exportar como MP4, MKV o WebM.',
       faq3Q: '¿Es segura la integración con Google Drive?',
       faq3A: 'Sí. Usamos la autenticación oficial OAuth 2.0 de Google y solo solicitamos el permiso mínimo de acceso a archivos necesario para subir tu vídeo comprimido.',
     },
@@ -710,27 +710,27 @@ export const dictionaries = {
       backToGuides: 'Volver a todas las guías',
     },
     about: {
-      title: 'Acerca de VideoShrink',
+      title: 'Acerca de ZipStor',
       intro:
-        'VideoShrink es una herramienta gratuita de compresión de vídeo basada en navegador. Usa FFmpeg compilado a WebAssembly para procesar tus vídeos completamente en tu dispositivo — sin subidas, sin servidores, sin problemas de privacidad.',
+        'ZipStor es una herramienta gratuita de compresión de vídeo basada en navegador. Usa FFmpeg compilado a WebAssembly para procesar tus vídeos completamente en tu dispositivo — sin subidas, sin servidores, sin problemas de privacidad.',
       howTitle: '¿Cómo funciona?',
       howDesc:
-        'Cuando seleccionas un vídeo, VideoShrink carga el motor FFmpeg en tu navegador y ejecuta toda la compresión localmente con WebAssembly. Tu vídeo nunca sale de tu teléfono o computadora.',
+        'Cuando seleccionas un vídeo, ZipStor carga el motor FFmpeg en tu navegador y ejecuta toda la compresión localmente con WebAssembly. Tu vídeo nunca sale de tu teléfono o computadora.',
       privacyTitle: 'Privacidad primero',
       privacyDesc:
         'Como todo ocurre en tu dispositivo, no tenemos acceso a tus vídeos. No almacenamos, subimos ni vemos tus archivos en ningún momento.',
       freeTitle: '¿Por qué es gratis?',
       freeDesc:
-        'VideoShrink se financia con anuncios. El motor de compresión se ejecuta en tu propio dispositivo, por lo que no tenemos costos de servidor.',
+        'ZipStor se financia con anuncios. El motor de compresión se ejecuta en tu propio dispositivo, por lo que no tenemos costos de servidor.',
     },
     privacy: {
       title: 'Política de Privacidad',
       lastUpdated: 'Última actualización: octubre 2026',
       intro:
-        'Esta Política de Privacidad explica cómo VideoShrink maneja tu información. Al usar este sitio web, aceptas las prácticas descritas a continuación.',
+        'Esta Política de Privacidad explica cómo ZipStor maneja tu información. Al usar este sitio web, aceptas las prácticas descritas a continuación.',
       noDataTitle: 'No recopilamos tus vídeos',
       noDataDesc:
-        'VideoShrink procesa toda la compresión de vídeo en tu navegador usando WebAssembly. Tus archivos de vídeo nunca se suben a ningún servidor. No podemos ver, acceder ni almacenar tus vídeos.',
+        'ZipStor procesa toda la compresión de vídeo en tu navegador usando WebAssembly. Tus archivos de vídeo nunca se suben a ningún servidor. No podemos ver, acceder ni almacenar tus vídeos.',
       analyticsTitle: 'Analíticas y cookies',
       analyticsDesc:
         'Podemos usar servicios de analítica de terceros (como Google Analytics) para entender el tráfico del sitio. Estos servicios pueden usar cookies para recopilar datos de uso anónimos. Puedes desactivar las cookies en la configuración de tu navegador.',
@@ -743,16 +743,16 @@ export const dictionaries = {
     terms: {
       title: 'Términos de Servicio',
       lastUpdated: 'Última actualización: octubre 2026',
-      intro: 'Estos Términos de Servicio rigen el uso de VideoShrink. Al usar este sitio web, aceptas estos términos.',
+      intro: 'Estos Términos de Servicio rigen el uso de ZipStor. Al usar este sitio web, aceptas estos términos.',
       useTitle: 'Uso del servicio',
       useDesc:
-        'VideoShrink se proporciona como herramienta gratuita para uso personal y comercial. Eres responsable del contenido que comprimes y de asegurarte de que tienes derecho a hacerlo.',
+        'ZipStor se proporciona como herramienta gratuita para uso personal y comercial. Eres responsable del contenido que comprimes y de asegurarte de que tienes derecho a hacerlo.',
       noWarrantyTitle: 'Sin garantía',
       noWarrantyDesc:
         'El servicio se proporciona "tal cual" sin ninguna garantía. No garantizamos que la compresión siempre esté disponible o produzca los resultados deseados.',
       liabilityTitle: 'Limitación de responsabilidad',
       liabilityDesc:
-        'VideoShrink no se hace responsable de ninguna pérdida de datos o daño resultante del uso de este servicio. Conserva siempre copias de seguridad de tus archivos originales.',
+        'ZipStor no se hace responsable de ninguna pérdida de datos o daño resultante del uso de este servicio. Conserva siempre copias de seguridad de tus archivos originales.',
       changesTitle: 'Cambios en estos términos',
       changesDesc:
         'Podemos actualizar estos Términos de Servicio en cualquier momento. El uso continuado del sitio web constituye la aceptación de los términos actualizados.',
@@ -765,7 +765,7 @@ export const dictionaries = {
   },
   de: {
     common: {
-      appName: 'VideoShrink',
+      appName: 'ZipStor',
       tagline: 'Videos auf dem Telefon komprimieren — kein Upload, 100% privat',
       home: 'Startseite',
       guides: 'Anleitungen',
@@ -787,7 +787,7 @@ export const dictionaries = {
       step2Desc: 'Wählen Sie Schnell 720p, Hohe Qualität 1080p oder eine Zieldateigröße.',
       step3Title: 'Herunterladen',
       step3Desc: 'Fortschritt in Echtzeit verfolgen und komprimiertes Video speichern.',
-      featuresTitle: 'Warum VideoShrink?',
+      featuresTitle: 'Warum ZipStor?',
       feature1Title: '100% Privat',
       feature1Desc:
         'Ihre Dateien werden vollständig auf Ihrem Gerät verarbeitet. Nichts wird auf einen Server hochgeladen.',
@@ -798,13 +798,13 @@ export const dictionaries = {
         'Läuft auf jedem modernen Browser — iPhone, Android, Mac oder PC. Keine App-Installation nötig.',
       seoTitle: 'iPhone-Videodateigröße reduzieren — Kostenlos online komprimieren',
       seoDescription:
-        'Erfahren Sie, wie Sie die Dateigröße von iPhone-Videos ohne Qualitätsverlust reduzieren. VideoShrink komprimiert Ihre Videos direkt im Browser — keine Uploads, keine Apps, komplett kostenlos.',
+        'Erfahren Sie, wie Sie die Dateigröße von iPhone-Videos ohne Qualitätsverlust reduzieren. ZipStor komprimiert Ihre Videos direkt im Browser — keine Uploads, keine Apps, komplett kostenlos.',
       guideLinksTitle: 'Hilfreiche Anleitungen',
       guideLink1: 'So reduzieren Sie die iPhone-Videodateigröße',
       // Info-Bereiche
-      howDetailTitle: 'So funktioniert VideoShrink',
+      howDetailTitle: 'So funktioniert ZipStor',
       howDetailDesc:
-        'VideoShrink nutzt WebAssembly (FFmpeg.wasm), um den gesamten Videokomprimierungsprozess in Ihrem Browser auszuführen. Ihre Videodateien verlassen nie Ihr Gerät — sie werden zu 100% lokal in Ihrem Browserspeicher verarbeitet. Das bedeutet: keine Uploads, keine Serververarbeitung, vollständiger Datenschutz.',
+        'ZipStor nutzt WebAssembly (FFmpeg.wasm), um den gesamten Videokomprimierungsprozess in Ihrem Browser auszuführen. Ihre Videodateien verlassen nie Ihr Gerät — sie werden zu 100% lokal in Ihrem Browserspeicher verarbeitet. Das bedeutet: keine Uploads, keine Serververarbeitung, vollständiger Datenschutz.',
       howDetailSecurity: 'Keine Server-Uploads, keine Verarbeitung durch Dritte. Ihre Daten bleiben auf Ihrem Gerät.',
       stepGuideTitle: 'Schritt-für-Schritt-Anleitung',
       stepGuide1: 'Wählen Sie Ihre Videodatei — tippen Sie auf den Upload-Bereich oder ziehen Sie eine Datei per Drag & Drop von Ihrem Gerät.',
@@ -814,7 +814,7 @@ export const dictionaries = {
       faq1Q: 'Werden meine Videos auf einem Server gespeichert?',
       faq1A: 'Nein. 100% der Verarbeitung erfolgt in Ihrem Browserspeicher. Ihre Videos werden nie auf einen Server hochgeladen.',
       faq2Q: 'Welche Videoformate werden unterstützt?',
-      faq2A: 'VideoShrink unterstützt MP4, MOV, WebM, AVI und andere wichtige Formate. Sie können als MP4, MKV oder WebM exportieren.',
+      faq2A: 'ZipStor unterstützt MP4, MOV, WebM, AVI und andere wichtige Formate. Sie können als MP4, MKV oder WebM exportieren.',
       faq3Q: 'Ist die Google-Drive-Integration sicher?',
       faq3A: 'Ja. Wir verwenden die offizielle Google OAuth 2.0-Authentifizierung und fordern nur die minimal erforderliche Dateizugriffsberechtigung zum Upload Ihres komprimierten Videos.',
     },
@@ -900,27 +900,27 @@ export const dictionaries = {
       backToGuides: 'Zurück zu allen Anleitungen',
     },
     about: {
-      title: 'Über VideoShrink',
+      title: 'Über ZipStor',
       intro:
-        'VideoShrink ist ein kostenloses, browserbasiertes Videokomprimierungstool. Es nutzt FFmpeg, kompiliert zu WebAssembly, um Videos vollständig auf Ihrem Gerät zu verarbeiten — keine Uploads, keine Server, keine Datenschutzbedenken.',
+        'ZipStor ist ein kostenloses, browserbasiertes Videokomprimierungstool. Es nutzt FFmpeg, kompiliert zu WebAssembly, um Videos vollständig auf Ihrem Gerät zu verarbeiten — keine Uploads, keine Server, keine Datenschutzbedenken.',
       howTitle: 'Wie funktioniert es?',
       howDesc:
-        'Wenn Sie ein Video auswählen, lädt VideoShrink die FFmpeg-Engine in Ihren Browser und führt die gesamte Komprimierung lokal mit WebAssembly aus. Ihre Videodatei verlässt nie Ihr Telefon oder Ihren Computer.',
+        'Wenn Sie ein Video auswählen, lädt ZipStor die FFmpeg-Engine in Ihren Browser und führt die gesamte Komprimierung lokal mit WebAssembly aus. Ihre Videodatei verlässt nie Ihr Telefon oder Ihren Computer.',
       privacyTitle: 'Datenschutz hat Vorrang',
       privacyDesc:
         'Da alles auf Ihrem Gerät passiert, haben wir keinen Zugriff auf Ihre Videos. Wir speichern, laden keine Dateien hoch und sehen sie zu keinem Zeitpunkt.',
       freeTitle: 'Warum ist es kostenlos?',
       freeDesc:
-        'VideoShrink wird durch Werbung finanziert. Die Komprimierungs-Engine läuft auf Ihrem eigenen Gerät, daher haben wir keine Serverkosten.',
+        'ZipStor wird durch Werbung finanziert. Die Komprimierungs-Engine läuft auf Ihrem eigenen Gerät, daher haben wir keine Serverkosten.',
     },
     privacy: {
       title: 'Datenschutzerklärung',
       lastUpdated: 'Letzte Aktualisierung: Oktober 2026',
       intro:
-        'Diese Datenschutzerklärung erklärt, wie VideoShrink mit Ihren Informationen umgeht. Durch die Nutzung dieser Website stimmen Sie den unten beschriebenen Praktiken zu.',
+        'Diese Datenschutzerklärung erklärt, wie ZipStor mit Ihren Informationen umgeht. Durch die Nutzung dieser Website stimmen Sie den unten beschriebenen Praktiken zu.',
       noDataTitle: 'Wir erfassen keine Videos',
       noDataDesc:
-        'VideoShrink verarbeitet die gesamte Videokomprimierung in Ihrem Browser mit WebAssembly. Ihre Videodateien werden nie auf einen Server hochgeladen. Wir können Ihre Videos nicht sehen, darauf zugreifen oder speichern.',
+        'ZipStor verarbeitet die gesamte Videokomprimierung in Ihrem Browser mit WebAssembly. Ihre Videodateien werden nie auf einen Server hochgeladen. Wir können Ihre Videos nicht sehen, darauf zugreifen oder speichern.',
       analyticsTitle: 'Analyse und Cookies',
       analyticsDesc:
         'Wir können Drittanbieter-Analysetools (wie Google Analytics) nutzen, um den Website-Traffic zu verstehen. Diese Dienste können Cookies verwenden, um anonyme Nutzungsdaten zu sammeln. Sie können Cookies in Ihren Browser-Einstellungen deaktivieren.',
@@ -933,16 +933,16 @@ export const dictionaries = {
     terms: {
       title: 'Nutzungsbedingungen',
       lastUpdated: 'Letzte Aktualisierung: Oktober 2026',
-      intro: 'Diese Nutzungsbedingungen regeln die Nutzung von VideoShrink. Durch die Nutzung dieser Website stimmen Sie diesen Bedingungen zu.',
+      intro: 'Diese Nutzungsbedingungen regeln die Nutzung von ZipStor. Durch die Nutzung dieser Website stimmen Sie diesen Bedingungen zu.',
       useTitle: 'Nutzung des Dienstes',
       useDesc:
-        'VideoShrink wird als kostenloses Tool für persönliche und kommerzielle Nutzung bereitgestellt. Sie sind für die Inhalte verantwortlich, die Sie komprimieren, und müssen sicherstellen, dass Sie das Recht dazu haben.',
+        'ZipStor wird als kostenloses Tool für persönliche und kommerzielle Nutzung bereitgestellt. Sie sind für die Inhalte verantwortlich, die Sie komprimieren, und müssen sicherstellen, dass Sie das Recht dazu haben.',
       noWarrantyTitle: 'Keine Gewährleistung',
       noWarrantyDesc:
         'Der Dienst wird "wie besehen" ohne jegliche Gewährleistung bereitgestellt. Wir garantieren nicht, dass die Komprimierung immer verfügbar ist oder die gewünschten Ergebnisse liefert.',
       liabilityTitle: 'Haftungsbeschränkung',
       liabilityDesc:
-        'VideoShrink haftet nicht für Datenverluste oder Schäden, die aus der Nutzung dieses Dienstes entstehen. Bewahren Sie immer Backups Ihrer Originaldateien auf.',
+        'ZipStor haftet nicht für Datenverluste oder Schäden, die aus der Nutzung dieses Dienstes entstehen. Bewahren Sie immer Backups Ihrer Originaldateien auf.',
       changesTitle: 'Änderungen dieser Bedingungen',
       changesDesc:
         'Wir können diese Nutzungsbedingungen jederzeit aktualisieren. Die fortgesetzte Nutzung der Website gilt als Zustimmung zu den aktualisierten Bedingungen.',
@@ -955,7 +955,7 @@ export const dictionaries = {
   },
   fr: {
     common: {
-      appName: 'VideoShrink',
+      appName: 'ZipStor',
       tagline: 'Compresser des vidéos sur votre téléphone — sans upload, 100% privé',
       home: 'Accueil',
       guides: 'Guides',
@@ -977,7 +977,7 @@ export const dictionaries = {
       step2Desc: 'Choisissez Rapide 720p, Haute Qualité 1080p, ou une taille cible.',
       step3Title: 'Télécharger',
       step3Desc: 'Suivez la progression en temps réel et enregistrez votre vidéo compressée.',
-      featuresTitle: 'Pourquoi VideoShrink ?',
+      featuresTitle: 'Pourquoi ZipStor ?',
       feature1Title: '100% Privé',
       feature1Desc:
         'Vos fichiers sont traités entièrement sur votre appareil. Rien n\'est uploadé vers un serveur.',
@@ -988,13 +988,13 @@ export const dictionaries = {
         'Fonctionne sur tout navigateur moderne — iPhone, Android, Mac ou PC. Aucune application à installer.',
       seoTitle: 'Réduire la taille des vidéos iPhone — Compresseur en ligne gratuit',
       seoDescription:
-        'Apprenez comment réduire la taille des vidéos iPhone sans perte de qualité. VideoShrink compresse vos vidéos directement dans le navigateur — sans upload, sans application, totalement gratuit.',
+        'Apprenez comment réduire la taille des vidéos iPhone sans perte de qualité. ZipStor compresse vos vidéos directement dans le navigateur — sans upload, sans application, totalement gratuit.',
       guideLinksTitle: 'Guides utiles',
       guideLink1: 'Comment réduire la taille des vidéos iPhone',
       // Sections d'information
-      howDetailTitle: 'Comment fonctionne VideoShrink',
+      howDetailTitle: 'Comment fonctionne ZipStor',
       howDetailDesc:
-        'VideoShrink utilise WebAssembly (FFmpeg.wasm) pour exécuter l\'ensemble du processus de compression vidéo dans votre navigateur. Vos fichiers vidéo ne quittent jamais votre appareil — ils sont traités à 100% localement dans la mémoire de votre navigateur. Cela signifie zéro upload, zéro traitement serveur et confidentialité totale des données.',
+        'ZipStor utilise WebAssembly (FFmpeg.wasm) pour exécuter l\'ensemble du processus de compression vidéo dans votre navigateur. Vos fichiers vidéo ne quittent jamais votre appareil — ils sont traités à 100% localement dans la mémoire de votre navigateur. Cela signifie zéro upload, zéro traitement serveur et confidentialité totale des données.',
       howDetailSecurity: 'Aucun upload vers des serveurs, aucun traitement tiers. Vos données restent sur votre appareil.',
       stepGuideTitle: 'Guide étape par étape',
       stepGuide1: 'Sélectionnez votre fichier vidéo — touchez la zone d\'upload ou glissez-déposez un fichier depuis votre appareil.',
@@ -1004,7 +1004,7 @@ export const dictionaries = {
       faq1Q: 'Mes vidéos sont-elles stockées sur un serveur ?',
       faq1A: 'Non. 100% du traitement se fait dans la mémoire de votre navigateur. Vos vidéos ne sont jamais uploadées vers un serveur.',
       faq2Q: 'Quels formats vidéo sont pris en charge ?',
-      faq2A: 'VideoShrink prend en charge MP4, MOV, WebM, AVI et autres formats principaux. Vous pouvez exporter en MP4, MKV ou WebM.',
+      faq2A: 'ZipStor prend en charge MP4, MOV, WebM, AVI et autres formats principaux. Vous pouvez exporter en MP4, MKV ou WebM.',
       faq3Q: 'L\'intégration Google Drive est-elle sûre ?',
       faq3A: 'Oui. Nous utilisons l\'authentification officielle Google OAuth 2.0 et ne demandons que l\'autorisation minimale d\'accès aux fichiers nécessaire pour uploader votre vidéo compressée.',
     },
@@ -1090,27 +1090,27 @@ export const dictionaries = {
       backToGuides: 'Retour à tous les guides',
     },
     about: {
-      title: 'À propos de VideoShrink',
+      title: 'À propos de ZipStor',
       intro:
-        'VideoShrink est un outil gratuit de compression vidéo basé sur navigateur. Il utilise FFmpeg compilé en WebAssembly pour traiter vos vidéos entièrement sur votre appareil — sans upload, sans serveur, sans problème de confidentialité.',
+        'ZipStor est un outil gratuit de compression vidéo basé sur navigateur. Il utilise FFmpeg compilé en WebAssembly pour traiter vos vidéos entièrement sur votre appareil — sans upload, sans serveur, sans problème de confidentialité.',
       howTitle: 'Comment ça fonctionne ?',
       howDesc:
-        'Lorsque vous sélectionnez une vidéo, VideoShrink charge le moteur FFmpeg dans votre navigateur et exécute toute la compression localement avec WebAssembly. Votre fichier vidéo ne quitte jamais votre téléphone ou ordinateur.',
+        'Lorsque vous sélectionnez une vidéo, ZipStor charge le moteur FFmpeg dans votre navigateur et exécute toute la compression localement avec WebAssembly. Votre fichier vidéo ne quitte jamais votre téléphone ou ordinateur.',
       privacyTitle: 'Confidentialité d\'abord',
       privacyDesc:
         'Puisque tout se passe sur votre appareil, nous n\'avons pas accès à vos vidéos. Nous ne stockons, ne téléchargeons et ne voyons vos fichiers à aucun moment.',
       freeTitle: 'Pourquoi c\'est gratuit ?',
       freeDesc:
-        'VideoShrink est financé par la publicité. Le moteur de compression s\'exécute sur votre propre appareil, donc nous n\'avons aucun coût de serveur.',
+        'ZipStor est financé par la publicité. Le moteur de compression s\'exécute sur votre propre appareil, donc nous n\'avons aucun coût de serveur.',
     },
     privacy: {
       title: 'Politique de Confidentialité',
       lastUpdated: 'Dernière mise à jour : octobre 2026',
       intro:
-        'Cette Politique de Confidentialité explique comment VideoShrink traite vos informations. En utilisant ce site web, vous acceptez les pratiques décrites ci-dessous.',
+        'Cette Politique de Confidentialité explique comment ZipStor traite vos informations. En utilisant ce site web, vous acceptez les pratiques décrites ci-dessous.',
       noDataTitle: 'Nous ne collectons pas vos vidéos',
       noDataDesc:
-        'VideoShrink traite toute la compression vidéo dans votre navigateur avec WebAssembly. Vos fichiers vidéo ne sont jamais uploadés vers un serveur. Nous ne pouvons pas voir, accéder ou stocker vos vidéos.',
+        'ZipStor traite toute la compression vidéo dans votre navigateur avec WebAssembly. Vos fichiers vidéo ne sont jamais uploadés vers un serveur. Nous ne pouvons pas voir, accéder ou stocker vos vidéos.',
       analyticsTitle: 'Analytique et cookies',
       analyticsDesc:
         'Nous pouvons utiliser des services d\'analyse tiers (comme Google Analytics) pour comprendre le trafic du site. Ces services peuvent utiliser des cookies pour collecter des données d\'utilisation anonymes. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur.',
@@ -1123,16 +1123,16 @@ export const dictionaries = {
     terms: {
       title: 'Conditions d\'Utilisation',
       lastUpdated: 'Dernière mise à jour : octobre 2026',
-      intro: 'Ces Conditions d\'Utilisation régissent votre utilisation de VideoShrink. En utilisant ce site web, vous acceptez ces conditions.',
+      intro: 'Ces Conditions d\'Utilisation régissent votre utilisation de ZipStor. En utilisant ce site web, vous acceptez ces conditions.',
       useTitle: 'Utilisation du service',
       useDesc:
-        'VideoShrink est fourni comme un outil gratuit pour un usage personnel et commercial. Vous êtes responsable du contenu que vous compressez et devez vous assurer que vous en avez le droit.',
+        'ZipStor est fourni comme un outil gratuit pour un usage personnel et commercial. Vous êtes responsable du contenu que vous compressez et devez vous assurer que vous en avez le droit.',
       noWarrantyTitle: 'Aucune garantie',
       noWarrantyDesc:
         'Le service est fourni « tel quel » sans aucune garantie. Nous ne garantissons pas que la compression sera toujours disponible ou produira les résultats souhaités.',
       liabilityTitle: 'Limitation de responsabilité',
       liabilityDesc:
-        'VideoShrink n\'est pas responsable de toute perte de données ou dommage résultant de l\'utilisation de ce service. Conservez toujours des sauvegardes de vos fichiers originaux.',
+        'ZipStor n\'est pas responsable de toute perte de données ou dommage résultant de l\'utilisation de ce service. Conservez toujours des sauvegardes de vos fichiers originaux.',
       changesTitle: 'Modifications de ces conditions',
       changesDesc:
         'Nous pouvons mettre à jour ces Conditions d\'Utilisation à tout moment. L\'utilisation continue du site web constitue l\'acceptation des conditions mises à jour.',
@@ -1145,7 +1145,7 @@ export const dictionaries = {
   },
   zh: {
     common: {
-      appName: 'VideoShrink',
+      appName: 'ZipStor',
       tagline: '在手机上直接压缩视频 — 无需上传，100%隐私',
       home: '首页',
       guides: '指南',
@@ -1167,7 +1167,7 @@ export const dictionaries = {
       step2Desc: '选择快速720p、高质量1080p或目标文件大小。',
       step3Title: '下载',
       step3Desc: '实时查看进度，然后保存压缩后的视频。',
-      featuresTitle: '为什么选择VideoShrink？',
+      featuresTitle: '为什么选择ZipStor？',
       feature1Title: '100%隐私',
       feature1Desc:
         '您的文件完全在您的设备上处理。不会上传任何内容到服务器。',
@@ -1178,13 +1178,13 @@ export const dictionaries = {
         '在任何现代浏览器上运行 — iPhone、Android、Mac或PC。无需安装应用。',
       seoTitle: '减少iPhone视频文件大小 — 免费在线压缩工具',
       seoDescription:
-        '了解如何在不损失画质的情况下减少iPhone视频文件大小。VideoShrink直接在浏览器中压缩您的视频 — 无需上传，无需应用，完全免费。',
+        '了解如何在不损失画质的情况下减少iPhone视频文件大小。ZipStor直接在浏览器中压缩您的视频 — 无需上传，无需应用，完全免费。',
       guideLinksTitle: '实用指南',
       guideLink1: '如何减少iPhone视频文件大小',
       // 信息部分
-      howDetailTitle: 'VideoShrink 的工作原理',
+      howDetailTitle: 'ZipStor 的工作原理',
       howDetailDesc:
-        'VideoShrink 使用 WebAssembly (FFmpeg.wasm) 在浏览器内运行整个视频压缩过程。您的视频文件永远不会离开您的设备 — 它们在浏览器内存中100%本地处理。这意味着零上传、零服务器处理和完整的数据隐私。',
+        'ZipStor 使用 WebAssembly (FFmpeg.wasm) 在浏览器内运行整个视频压缩过程。您的视频文件永远不会离开您的设备 — 它们在浏览器内存中100%本地处理。这意味着零上传、零服务器处理和完整的数据隐私。',
       howDetailSecurity: '没有服务器上传，没有第三方处理。您的数据始终留在您的设备上。',
       stepGuideTitle: '分步使用指南',
       stepGuide1: '选择您的视频文件 — 点击上传区域或从设备拖放文件。',
@@ -1194,7 +1194,7 @@ export const dictionaries = {
       faq1Q: '我的视频会存储在服务器上吗？',
       faq1A: '不会。100%的处理在浏览器内存中完成。您的视频绝不会被上传到任何服务器。',
       faq2Q: '支持哪些视频格式？',
-      faq2A: 'VideoShrink支持MP4、MOV、WebM、AVI等主要格式。您可以导出为MP4、MKV或WebM。',
+      faq2A: 'ZipStor支持MP4、MOV、WebM、AVI等主要格式。您可以导出为MP4、MKV或WebM。',
       faq3Q: 'Google云端硬盘集成安全吗？',
       faq3A: '是的。我们使用Google官方OAuth 2.0认证，仅请求上传压缩视频所需的最少文件访问权限。',
     },
@@ -1280,27 +1280,27 @@ export const dictionaries = {
       backToGuides: '返回所有指南',
     },
     about: {
-      title: '关于VideoShrink',
+      title: '关于ZipStor',
       intro:
-        'VideoShrink是一个免费的基于浏览器的视频压缩工具。它使用编译为WebAssembly的FFmpeg在您的设备上完全处理视频 — 无需上传，无需服务器，无需担心隐私。',
+        'ZipStor是一个免费的基于浏览器的视频压缩工具。它使用编译为WebAssembly的FFmpeg在您的设备上完全处理视频 — 无需上传，无需服务器，无需担心隐私。',
       howTitle: '它是如何工作的？',
       howDesc:
-        '当您选择视频时，VideoShrink将FFmpeg引擎加载到您的浏览器中，并使用WebAssembly在本地执行所有压缩。您的视频文件永远不会离开您的手机或电脑。',
+        '当您选择视频时，ZipStor将FFmpeg引擎加载到您的浏览器中，并使用WebAssembly在本地执行所有压缩。您的视频文件永远不会离开您的手机或电脑。',
       privacyTitle: '隐私优先',
       privacyDesc:
         '因为一切都在您的设备上处理，我们无法访问您的视频。我们在任何时候都不会存储、上传或查看您的文件。',
       freeTitle: '为什么免费？',
       freeDesc:
-        'VideoShrink通过广告支持。压缩引擎在您自己的设备上运行，因此我们没有服务器成本。',
+        'ZipStor通过广告支持。压缩引擎在您自己的设备上运行，因此我们没有服务器成本。',
     },
     privacy: {
       title: '隐私政策',
       lastUpdated: '最后更新：2026年10月',
       intro:
-        '本隐私政策解释了VideoShrink如何处理您的信息。使用本网站即表示您同意下述做法。',
+        '本隐私政策解释了ZipStor如何处理您的信息。使用本网站即表示您同意下述做法。',
       noDataTitle: '我们不收集您的视频',
       noDataDesc:
-        'VideoShrink使用WebAssembly在浏览器中处理所有视频压缩。您的视频文件永远不会上传到任何服务器。我们无法查看、访问或存储您的视频。',
+        'ZipStor使用WebAssembly在浏览器中处理所有视频压缩。您的视频文件永远不会上传到任何服务器。我们无法查看、访问或存储您的视频。',
       analyticsTitle: '分析和Cookie',
       analyticsDesc:
         '我们可能使用第三方分析服务（如Google Analytics）来了解网站流量。这些服务可能使用Cookie收集匿名使用数据。您可以在浏览器设置中禁用Cookie。',
@@ -1313,16 +1313,16 @@ export const dictionaries = {
     terms: {
       title: '服务条款',
       lastUpdated: '最后更新：2026年10月',
-      intro: '本服务条款适用于您对VideoShrink的使用。使用本网站即表示您同意这些条款。',
+      intro: '本服务条款适用于您对ZipStor的使用。使用本网站即表示您同意这些条款。',
       useTitle: '服务使用',
       useDesc:
-        'VideoShrink作为免费工具供个人和商业使用。您对压缩的内容负责，并需确保您有权进行压缩。',
+        'ZipStor作为免费工具供个人和商业使用。您对压缩的内容负责，并需确保您有权进行压缩。',
       noWarrantyTitle: '无担保',
       noWarrantyDesc:
         '本服务按"原样"提供，不含任何担保。我们不保证压缩始终可用或产生预期结果。',
       liabilityTitle: '责任限制',
       liabilityDesc:
-        'VideoShrink不对使用本服务导致的任何数据丢失或损害承担责任。请始终保留原始文件的备份。',
+        'ZipStor不对使用本服务导致的任何数据丢失或损害承担责任。请始终保留原始文件的备份。',
       changesTitle: '条款变更',
       changesDesc:
         '我们可能随时更新本服务条款。继续使用本网站即表示接受更新后的条款。',

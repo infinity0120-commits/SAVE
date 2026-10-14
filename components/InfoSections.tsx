@@ -30,7 +30,7 @@ interface InfoSectionsProps {
 export function InfoSections({ dict }: InfoSectionsProps) {
   return (
     <div className="space-y-12 md:space-y-16">
-      {/* How VideoShrink Works — detailed */}
+      {/* How ZipStor Works — detailed */}
       <section>
         <h2 className="mb-4 text-center text-2xl font-bold text-slate-900 dark:text-white">
           {dict.howDetailTitle}

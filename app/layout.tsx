@@ -5,10 +5,10 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'VideoShrink — Free Online Video Compressor | No Upload',
+  title: 'ZipStor — Free Online Video Compressor | No Upload',
   description:
     'Compress video files right in your browser. 100% private — your videos never leave your device. Free, no sign-up, works on iPhone, Android, Mac & PC.',
-  applicationName: 'VideoShrink',
+  applicationName: 'ZipStor',
   manifest: '/manifest.json',
   keywords: [
     'video compressor',
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     '아이폰 동영상 용량 줄이기',
     '동영상 압축',
   ],
-  authors: [{ name: 'VideoShrink' }],
+  authors: [{ name: 'ZipStor' }],
   openGraph: {
     type: 'website',
-    siteName: 'VideoShrink',
-    title: 'VideoShrink — Free Online Video Compressor',
+    siteName: 'ZipStor',
+    title: 'ZipStor — Free Online Video Compressor',
     description:
       'Compress videos right in your browser. No uploads, 100% private, free forever.',
     images: [
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         url: '/icons/icon-512.png',
         width: 512,
         height: 512,
-        alt: 'VideoShrink',
+        alt: 'ZipStor',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VideoShrink — Free Online Video Compressor',
+    title: 'ZipStor — Free Online Video Compressor',
     description:
       'Compress videos right in your browser. No uploads, 100% private, free forever.',
     images: ['/icons/icon-512.png'],
