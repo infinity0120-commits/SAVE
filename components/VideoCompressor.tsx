@@ -154,6 +154,13 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
   const queueListRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (!driveConfigured) return;
+    initGoogleDrive().catch((error: unknown) => {
+      console.error('Google Drive initialization failed:', error);
+    });
+  }, [driveConfigured]);
+
   // Cleanup on unmount
   useEffect(() => {
     return () => {

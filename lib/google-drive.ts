@@ -19,6 +19,7 @@ interface GoogleTokenClient {
 let tokenClient: GoogleTokenClient | null = null;
 let accessToken: string | null = null;
 let gapiReady = false;
+let googleDriveInitPromise: Promise<void> | null = null;
 
 function loadScript(src: string): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -77,7 +78,7 @@ function waitForGoogleIdentityServices(): Promise<void> {
   });
 }
 
-export async function initGoogleDrive(): Promise<void> {
+async function initializeGoogleDrive(): Promise<void> {
   if (gapiReady && tokenClient) return;
   if (!GOOGLE_CLIENT_ID) {
     throw new Error('Google Drive client ID is not configured.');
@@ -120,6 +121,17 @@ export async function initGoogleDrive(): Promise<void> {
   }
 
   gapiReady = true;
+}
+
+export function initGoogleDrive(): Promise<void> {
+  if (gapiReady && tokenClient) return Promise.resolve();
+  if (!googleDriveInitPromise) {
+    googleDriveInitPromise = initializeGoogleDrive().catch((error: unknown) => {
+      googleDriveInitPromise = null;
+      throw error;
+    });
+  }
+  return googleDriveInitPromise;
 }
 
 export function isGoogleDriveConfigured(): boolean {
@@ -178,6 +190,7 @@ export async function requestDriveAccess(): Promise<string> {
     };
 
     try {
+      console.log('GIS requestAccessToken started');
       client.requestAccessToken({ prompt: 'consent' });
     } catch (error) {
       console.error('GIS requestAccessToken failed:', error);
