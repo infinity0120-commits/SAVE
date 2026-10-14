@@ -65,12 +65,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" translate="no" suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <meta name="google" content="notranslate" />
         <meta name="google-site-verification" content="1lIW9GOBqAQlPNFUEqsiRHD7O5kFZQkjw21M_4zK72g" />
       </head>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={`${inter.className} notranslate`} suppressHydrationWarning>
         {children}
       </body>
     </html>
