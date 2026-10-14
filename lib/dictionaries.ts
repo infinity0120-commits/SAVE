@@ -436,7 +436,7 @@ export const dictionaries = {
       faq2Q: '対応している動画フォーマットは？',
       faq2A: 'MP4、MOV、WebM、AVIなどの主要フォーマットに対応。MP4、MKV、WebMとして出力できます。',
       faq3Q: 'Googleドライブ連携は安全ですか？',
-      faq3A: 'はい。Google OAuth 2.0公式認証を使用し、圧縮動画のアップロードに必要な最小限のファイルアクセス権限のみを要求します。,
+      faq3A: 'はい。Google OAuth 2.0公式認証を使用し、圧縮動画のアップロードに必要な最小限のファイルアクセス権限のみを要求します。',
     },
     compressor: {
       title: '動画を圧縮',
@@ -626,7 +626,7 @@ export const dictionaries = {
       faq2Q: '¿Qué formatos de vídeo se admiten?',
       faq2A: 'VideoShrink admite MP4, MOV, WebM, AVI y otros formatos principales. Puedes exportar como MP4, MKV o WebM.',
       faq3Q: '¿Es segura la integración con Google Drive?',
-      faq3A: 'Sí. Usamos la autenticación oficial OAuth 2.0 de Google y solo solicitamos el permiso mínimo de acceso a archivos necesario para subir tu vídeo comprimido.,
+      faq3A: 'Sí. Usamos la autenticación oficial OAuth 2.0 de Google y solo solicitamos el permiso mínimo de acceso a archivos necesario para subir tu vídeo comprimido.',
     },
     compressor: {
       title: 'Comprime tu vídeo',
@@ -816,7 +816,7 @@ export const dictionaries = {
       faq2Q: 'Welche Videoformate werden unterstützt?',
       faq2A: 'VideoShrink unterstützt MP4, MOV, WebM, AVI und andere wichtige Formate. Sie können als MP4, MKV oder WebM exportieren.',
       faq3Q: 'Ist die Google-Drive-Integration sicher?',
-      faq3A: 'Ja. Wir verwenden die offizielle Google OAuth 2.0-Authentifizierung und fordern nur die minimal erforderliche Dateizugriffsberechtigung zum Upload Ihres komprimierten Videos.,
+      faq3A: 'Ja. Wir verwenden die offizielle Google OAuth 2.0-Authentifizierung und fordern nur die minimal erforderliche Dateizugriffsberechtigung zum Upload Ihres komprimierten Videos.',
     },
     compressor: {
       title: 'Video komprimieren',
@@ -1006,7 +1006,7 @@ export const dictionaries = {
       faq2Q: 'Quels formats vidéo sont pris en charge ?',
       faq2A: 'VideoShrink prend en charge MP4, MOV, WebM, AVI et autres formats principaux. Vous pouvez exporter en MP4, MKV ou WebM.',
       faq3Q: 'L\'intégration Google Drive est-elle sûre ?',
-      faq3A: 'Oui. Nous utilisons l\'authentification officielle Google OAuth 2.0 et ne demandons que l\'autorisation minimale d\'accès aux fichiers nécessaire pour uploader votre vidéo compressée.,
+      faq3A: 'Oui. Nous utilisons l\'authentification officielle Google OAuth 2.0 et ne demandons que l\'autorisation minimale d\'accès aux fichiers nécessaire pour uploader votre vidéo compressée.',
     },
     compressor: {
       title: 'Compresser votre vidéo',
@@ -1196,7 +1196,7 @@ export const dictionaries = {
       faq2Q: '支持哪些视频格式？',
       faq2A: 'VideoShrink支持MP4、MOV、WebM、AVI等主要格式。您可以导出为MP4、MKV或WebM。',
       faq3Q: 'Google云端硬盘集成安全吗？',
-      faq3A: '是的。我们使用Google官方OAuth 2.0认证，仅请求上传压缩视频所需的最少文件访问权限。,
+      faq3A: '是的。我们使用Google官方OAuth 2.0认证，仅请求上传压缩视频所需的最少文件访问权限。',
     },
     compressor: {
       title: '压缩您的视频',
