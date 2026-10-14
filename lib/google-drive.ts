@@ -21,6 +21,7 @@ function loadScript(src: string): Promise<void> {
     script.onload = () => resolve();
     script.onerror = () => reject(new Error(`Failed to load ${src}`));
     document.head.appendChild(script);
+    setTimeout(() => reject(new Error(`Timeout loading ${src}`)), 30000);
   });
 }
 
@@ -29,8 +30,12 @@ export async function initGoogleDrive(): Promise<void> {
   await loadScript('https://apis.google.com/js/api.js');
   await loadScript('https://accounts.google.com/gsi/client');
 
-  await new Promise<void>((resolve) => {
-    (window as any).gapi.load('client', () => resolve());
+  await new Promise<void>((resolve, reject) => {
+    const timeout = setTimeout(() => reject(new Error('gapi.load timeout')), 30000);
+    (window as any).gapi.load('client', () => {
+      clearTimeout(timeout);
+      resolve();
+    });
   });
 
   await (window as any).gapi.client.init({
@@ -59,7 +64,19 @@ export async function requestDriveAccess(): Promise<string> {
       return;
     }
 
+    let settled = false;
+
+    const timeout = setTimeout(() => {
+      if (!settled) {
+        settled = true;
+        reject(new Error('Google Drive authentication timed out. Please try again.'));
+      }
+    }, 60000);
+
     tokenClient.callback = (resp: any) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
       if (resp.error) {
         reject(new Error(resp.error));
         return;
@@ -68,7 +85,15 @@ export async function requestDriveAccess(): Promise<string> {
       resolve(resp.access_token);
     };
 
-    tokenClient.requestAccessToken({ prompt: 'consent' });
+    try {
+      tokenClient.requestAccessToken({ prompt: 'consent' });
+    } catch {
+      if (!settled) {
+        settled = true;
+        clearTimeout(timeout);
+        reject(new Error('Failed to open Google sign-in popup. Please check your popup blocker settings.'));
+      }
+    }
   });
 }
 

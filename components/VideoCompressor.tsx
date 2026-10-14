@@ -142,6 +142,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
   const [currentQueueIndex, setCurrentQueueIndex] = useState(-1);
   const [driveConnected, setDriveConnected] = useState(false);
   const [driveConnecting, setDriveConnecting] = useState(false);
+  const [driveError, setDriveError] = useState<string | null>(null);
   const [driveConfigured] = useState(() => isGoogleDriveConfigured());
 
   const ffmpegRef = useRef<FFmpeg | null>(null);
@@ -458,12 +459,15 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
       await requestDriveAccess();
       setDriveConnected(true);
       return true;
-    } catch {
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : t.driveConnectError;
+      setDriveError(msg);
+      setTimeout(() => setDriveError(null), 6000);
       return false;
     } finally {
       setDriveConnecting(false);
     }
-  }, [driveConnected]);
+  }, [driveConnected, t.driveConnectError]);
 
   const uploadItemToDrive = useCallback(async (id: string) => {
     const item = queue.find((i) => i.id === id);
@@ -493,10 +497,13 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
 
       URL.revokeObjectURL(item.outputUrl);
       setQueue((prev) => prev.map((it) => it.id === id ? { ...it, outputUrl: null } : it));
-    } catch {
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : t.driveUploadError;
+      setDriveError(msg);
+      setTimeout(() => setDriveError(null), 6000);
       setQueue((prev) => prev.map((it) => it.id === id ? { ...it, driveUploading: false } : it));
     }
-  }, [queue, driveConnected, connectDrive]);
+  }, [queue, driveConnected, connectDrive, t.driveUploadError]);
 
   const downloadItem = useCallback((item: QueueItem) => {
     if (!item.outputUrl) return;
@@ -1038,6 +1045,14 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
               <p className="mt-3 text-center text-xs text-slate-400 dark:text-slate-500">
                 {t.driveLoginPrompt}
               </p>
+            )}
+
+            {/* Drive error message */}
+            {driveError && (
+              <div className="mt-3 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50/80 p-3 dark:border-red-900 dark:bg-red-950/20">
+                <AlertCircle className="h-4 w-4 shrink-0 text-red-600 dark:text-red-400 mt-0.5" />
+                <p className="text-sm text-red-700 dark:text-red-400">{driveError}</p>
+              </div>
             )}
           </div>
         </div>
