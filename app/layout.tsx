@@ -68,6 +68,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <meta name="google-site-verification" content="1lIW9GOBqAQlPNFUEqsiRHD7O5kFZQkjw21M_4zK72g" />
       </head>
       <body className={inter.className} suppressHydrationWarning>
         {children}
