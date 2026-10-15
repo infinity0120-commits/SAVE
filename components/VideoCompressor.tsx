@@ -23,6 +23,7 @@ import {
   Cloud,
   BatteryCharging,
   ListVideo,
+  LockKeyhole,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { AdBanner } from '@/components/AdBanner';
@@ -53,9 +54,19 @@ const formatCodecs: Record<OutputFormat, { vcodec: string; acodec: string; extra
   webm: { vcodec: 'libvpx', acodec: 'libopus', extra: [] },
 };
 
+interface VideoMetadata {
+  width: number;
+  height: number;
+  frameRate: number | null;
+  duration: number;
+  videoCodec: string;
+  audioCodec: string;
+}
+
 interface QueueItem {
   id: string;
   file: File;
+  metadata: VideoMetadata | null;
   status: ItemStatus;
   progress: number;
   originalSize: number;
@@ -108,6 +119,100 @@ function savingsPct(original: number, compressed: number): number {
   if (original <= 0 || compressed <= 0) return 0;
   if (compressed >= original) return 0;
   return Math.round(((original - compressed) / original) * 100);
+}
+
+function getCodecLabels(type: string): Pick<VideoMetadata, 'videoCodec' | 'audioCodec'> {
+  if (type.includes('webm')) return { videoCodec: 'VP8 / VP9', audioCodec: 'Opus' };
+  if (type.includes('mp4') || type.includes('quicktime')) return { videoCodec: 'H.264', audioCodec: 'AAC' };
+  if (type.includes('ogg')) return { videoCodec: 'Theora', audioCodec: 'Vorbis' };
+  return { videoCodec: 'Unknown', audioCodec: 'Unknown' };
+}
+
+function readVideoMetadata(file: File): Promise<VideoMetadata> {
+  return new Promise((resolve) => {
+    const video = document.createElement('video');
+    const url = URL.createObjectURL(file);
+    const finish = (metadata: VideoMetadata) => {
+      URL.revokeObjectURL(url);
+      video.removeAttribute('src');
+      video.load();
+      resolve(metadata);
+    };
+
+    video.preload = 'metadata';
+    video.onloadedmetadata = () => {
+      let frameRate: number | null = null;
+      try {
+        const stream = (video as HTMLVideoElement & { captureStream?: () => MediaStream }).captureStream?.();
+        const track = stream?.getVideoTracks()[0];
+        const value = track?.getSettings().frameRate;
+        if (typeof value === 'number' && Number.isFinite(value) && value > 0) frameRate = value;
+        stream?.getTracks().forEach((streamTrack) => streamTrack.stop());
+      } catch {}
+
+      finish({
+        width: video.videoWidth,
+        height: video.videoHeight,
+        frameRate,
+        duration: video.duration,
+        ...getCodecLabels(file.type),
+      });
+    };
+    video.onerror = () => finish({
+      width: 0,
+      height: 0,
+      frameRate: null,
+      duration: 0,
+      ...getCodecLabels(file.type),
+    });
+    video.src = url;
+  });
+}
+
+function VideoMetadataCard({ item }: { item: QueueItem }) {
+  const metadata = item.metadata;
+  return (
+    <div className="mt-3 overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-950 text-slate-100 shadow-lg shadow-slate-950/10">
+      <div className="flex items-start gap-2 border-b border-slate-800 bg-slate-900 px-4 py-3">
+        <LockKeyhole className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+        <p className="text-xs font-semibold leading-relaxed text-emerald-300">
+          파일이 서버에 올라가지 않습니다. 모든 처리가 내 컴퓨터에서 이루어져요
+        </p>
+      </div>
+      <div className="grid gap-x-5 gap-y-3 p-4 sm:grid-cols-2">
+        <div className="min-w-0 sm:col-span-2">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Filename</p>
+          <p className="mt-1 truncate text-sm font-medium text-white">{item.file.name}</p>
+        </div>
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">File Size</p>
+          <p className="mt-1 text-sm font-semibold text-slate-200">{formatBytes(item.originalSize)}</p>
+        </div>
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Duration</p>
+          <p className="mt-1 text-sm font-semibold text-slate-200">{metadata ? formatDuration(metadata.duration) : 'Reading…'}</p>
+        </div>
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Resolution &amp; Frame Rate</p>
+          <p className="mt-1 text-sm font-semibold text-slate-200">
+            {metadata && metadata.width > 0 ? `${metadata.width} × ${metadata.height} @ ${metadata.frameRate ? `${Math.round(metadata.frameRate)}fps` : '—'}` : 'Reading…'}
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Video / Audio Codec</p>
+          <p className="mt-1 text-sm font-semibold text-slate-200">{metadata ? `${metadata.videoCodec} / ${metadata.audioCodec}` : 'Reading…'}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function formatDuration(seconds: number): string {
+  if (!Number.isFinite(seconds) || seconds < 0) return '—';
+  const totalSeconds = Math.round(seconds);
+  const minutes = Math.floor(totalSeconds / 60);
+  const remainingSeconds = totalSeconds % 60;
+  return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
 let wakeLock: WakeLockSentinel | null = null;
@@ -237,6 +342,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
     const newItems: QueueItem[] = videoFiles.map((file) => ({
       id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
       file,
+      metadata: null,
       status: 'waiting',
       progress: 0,
       originalSize: file.size,
@@ -251,6 +357,12 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
 
     setQueue((prev) => [...prev, ...newItems]);
     setStage('ready');
+
+    newItems.forEach((item) => {
+      readVideoMetadata(item.file).then((metadata) => {
+        setQueue((prev) => prev.map((current) => current.id === item.id ? { ...current, metadata } : current));
+      });
+    });
   }, []);
 
   const removeFromQueue = useCallback((id: string) => {
@@ -647,22 +759,25 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
             </button>
           </div>
 
-          <div className="space-y-2 max-h-64 overflow-y-auto rounded-xl border border-slate-200 dark:border-slate-800">
+          <div className="space-y-3">
             {queue.map((item) => (
-              <div key={item.id} className="flex items-center gap-3 rounded-lg bg-white px-3 py-2.5 dark:bg-slate-900">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
-                  <FileVideo className="h-5 w-5 text-slate-400" />
+              <div key={item.id}>
+                <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2.5 dark:border-slate-800 dark:bg-slate-900">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
+                    <FileVideo className="h-5 w-5 text-slate-400" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium text-slate-900 dark:text-white">{item.file.name}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">{formatBytes(item.originalSize)}</p>
+                  </div>
+                  <button
+                    onClick={() => removeFromQueue(item.id)}
+                    className="shrink-0 rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
                 </div>
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium text-slate-900 dark:text-white">{item.file.name}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">{formatBytes(item.originalSize)}</p>
-                </div>
-                <button
-                  onClick={() => removeFromQueue(item.id)}
-                  className="shrink-0 rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30"
-                >
-                  <X className="h-4 w-4" />
-                </button>
+                <VideoMetadataCard item={item} />
               </div>
             ))}
           </div>
@@ -943,6 +1058,8 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
                         <span className="text-sm font-medium text-emerald-700 dark:text-emerald-400">{t.driveUploadSuccess}</span>
                       </div>
                     )}
+
+                    <VideoMetadataCard item={item} />
 
                     {/* File info row */}
                     <div className="flex items-start gap-3">
