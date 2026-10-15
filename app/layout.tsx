@@ -73,6 +73,7 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
         <meta name="google-site-verification" content="1lIW9GOBqAQlPNFUEqsiRHD7O5kFZQkjw21M_4zK72g" />
         <meta name="google-adsense-account" content="ca-pub-4890153059682539" />
+        <meta name="naver-site-verification" content="44a96dac774f42f9b64772e1a2f85e6c8aeee736" />
       </head>
       <body className={`${inter.className} notranslate`} suppressHydrationWarning>
         {children}
