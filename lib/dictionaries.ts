@@ -53,6 +53,12 @@ export const dictionaries = {
       faq2A: 'ZipStor supports MP4, MOV, WebM, AVI, and other major formats. You can export as MP4, MKV, or WebM.',
       faq3Q: 'Is the Google Drive integration safe?',
       faq3A: 'Yes. We use official Google OAuth 2.0 authentication and only request the minimum file access permission needed to upload your compressed video.',
+      faq4Q: 'Is there a file size limit?',
+      faq4A: 'You can compress videos up to 2 GB in size. Since processing happens in your browser, very large files may take longer depending on your device\'s CPU and available memory.',
+      faq5Q: 'Will the compressed video lose quality?',
+      faq5A: 'ZipStor uses smart compression presets that balance quality and file size. The High Quality 1080p preset preserves near-original quality for most videos, while the Fast 720p preset produces smaller files suitable for quick sharing.',
+      faq6Q: 'Does ZipStor work on iPhone and Android?',
+      faq6A: 'Yes. ZipStor works in any modern mobile or desktop browser that supports WebAssembly — including Safari on iPhone, Chrome on Android, and all major desktop browsers. No app installation is required.',
     },
     compressor: {
       title: 'Compress Your Video',
@@ -150,6 +156,7 @@ export const dictionaries = {
       freeTitle: 'Why is it free?',
       freeDesc:
         'ZipStor is supported by ads. The compression engine runs on your own device, so we have no server costs to pass on to you.',
+      contactDesc: 'Have questions or feedback? Email us at support@videoshrink.app — we usually reply within 48 hours.',
     },
     privacy: {
       title: 'Privacy Policy',
@@ -166,7 +173,7 @@ export const dictionaries = {
       adsDesc:
         'This website may display ads served by Google AdSense. Google and its partners may use cookies to serve ads based on your prior visits to this website or other websites. You can opt out of personalized advertising by visiting Google Ads Settings.',
       contactTitle: 'Contact',
-      contactDesc: 'If you have questions about this Privacy Policy, please contact us.',
+      contactDesc: 'If you have questions about this Privacy Policy, please contact us at support@videoshrink.app.',
     },
     terms: {
       title: 'Terms of Service',
@@ -246,6 +253,12 @@ export const dictionaries = {
       faq2A: 'MP4, MOV, WebM, AVI 등 주요 포맷을 지원합니다. MP4, MKV, WebM으로 출력할 수 있습니다.',
       faq3Q: '구글 드라이브 연동은 안전한가요?',
       faq3A: '네. 구글 OAuth 2.0 정식 인증을 사용하며, 압축된 동영상 업로드에 필요한 최소한의 파일 접근 권한만 요청합니다.',
+      faq4Q: '파일 크기 제한이 있나요?',
+      faq4A: '최대 2GB까지 압축할 수 있습니다. 브라우저에서 처리되므로 용량이 큰 파일은 기기 CPU와 메모리에 따라 시간이 더 걸릴 수 있습니다.',
+      faq5Q: '압축하면 화질이 떨어지나요?',
+      faq5A: 'ZipStor는 화질과 파일 크기의 균형을 맞추는 스마트 압축 프리셋을 사용합니다. 고화질 1080p 프리셋은 대부분의 영상에서 원본에 가까운 화질을 유지하며, 빠른 720p 프리셋은 빠른 공유용으로 더 작은 파일을 만듭니다.',
+      faq6Q: '아이폰과 안드로이드에서도 작동하나요?',
+      faq6A: '네. WebAssembly를 지원하는 모든 최신 모바일·데스크톱 브라우저에서 작동합니다 — 아이폰 Safari, 안드로이드 Chrome, 모든 주요 데스크톱 브라우저 포함. 앱 설치 불필요.',
     },
     compressor: {
       title: '동영상 압축하기',
@@ -342,6 +355,7 @@ export const dictionaries = {
       freeTitle: '왜 무료인가요?',
       freeDesc:
         'ZipStor는 광고로 운영됩니다. 압축 엔진이 사용자 기기에서 실행되므로 서버 비용이 들지 않습니다.',
+      contactDesc: '질문이나 피드백이 있으시면 support@videoshrink.app로 이메일 보내주세요 — 보통 48시간 이내에 답변드립니다.',
     },
     privacy: {
       title: '개인정보처리방침',
@@ -358,7 +372,7 @@ export const dictionaries = {
       adsDesc:
         '이 웹사이트는 Google AdSense가 제공하는 광고를 표시할 수 있습니다. Google 및 파트너는 이 웹사이트 또는 다른 웹사이트 방문 기록을 기반으로 쿠키를 사용하여 광고를 게재할 수 있습니다. Google 광고 설정에서 맞춤 광고를 비활성화할 수 있습니다.',
       contactTitle: '연락처',
-      contactDesc: '개인정보처리방침에 대해 궁금한 점이 있으시면 연락 주세요.',
+      contactDesc: '개인정보처리방침에 대해 궁금한 점이 있으시면 support@videoshrink.app로 연락 주세요.',
     },
     terms: {
       title: '이용약관',
@@ -437,6 +451,12 @@ export const dictionaries = {
       faq2A: 'MP4、MOV、WebM、AVIなどの主要フォーマットに対応。MP4、MKV、WebMとして出力できます。',
       faq3Q: 'Googleドライブ連携は安全ですか？',
       faq3A: 'はい。Google OAuth 2.0公式認証を使用し、圧縮動画のアップロードに必要な最小限のファイルアクセス権限のみを要求します。',
+      faq4Q: 'ファイルサイズに制限はありますか？',
+      faq4A: '最大2GBまで圧縮できます。ブラウザ内で処理されるため、非常に大きなファイルはデバイスのCPUとメモリによって時間がかかる場合があります。',
+      faq5Q: '圧縮すると画質は落ちますか？',
+      faq5A: 'ZipStorは画質とファイルサイズのバランスを取るスマート圧縮プリセットを使用します。高品質1080pプリセットはほぼ元の画質を維持し、高速720pプリセットは共有用のより小さいファイルを作成します。',
+      faq6Q: 'iPhoneやAndroidでも動作しますか？',
+      faq6A: 'はい。WebAssemblyをサポートするすべてのモダンなモバイル・デスクトップブラウザで動作します — iPhoneのSafari、AndroidのChrome、すべての主要なデスクトップブラウザを含みます。アプリインストール不要。',
     },
     compressor: {
       title: '動画を圧縮',
@@ -532,6 +552,7 @@ export const dictionaries = {
       freeTitle: 'なぜ無料なの？',
       freeDesc:
         'ZipStorは広告で運営されています。圧縮エンジンはユーザーのデバイスで実行されるため、サーバー費用がかかりません。',
+      contactDesc: 'ご質問やフィードバックは support@videoshrink.app までメールでお問い合わせください — 通常48時間以内に返信します。',
     },
     privacy: {
       title: 'プライバシーポリシー',
@@ -548,7 +569,7 @@ export const dictionaries = {
       adsDesc:
         'このウェブサイトにはGoogle AdSense配信の広告が表示される場合があります。Googleとパートナーはこのウェブサイトまたは他のウェブサイトへの過去の訪問に基づき、Cookieを使用して広告を配信する場合があります。Google広告設定でパーソナライズ広告を無効にできます。',
       contactTitle: 'お問い合わせ',
-      contactDesc: 'プライバシーポリシーについてご質問がありましたら、お問い合わせください。',
+      contactDesc: 'プライバシーポリシーについてご質問がありましたら、support@videoshrink.appまでお問い合わせください。',
     },
     terms: {
       title: '利用規約',
@@ -627,6 +648,12 @@ export const dictionaries = {
       faq2A: 'ZipStor admite MP4, MOV, WebM, AVI y otros formatos principales. Puedes exportar como MP4, MKV o WebM.',
       faq3Q: '¿Es segura la integración con Google Drive?',
       faq3A: 'Sí. Usamos la autenticación oficial OAuth 2.0 de Google y solo solicitamos el permiso mínimo de acceso a archivos necesario para subir tu vídeo comprimido.',
+      faq4Q: '¿Hay un límite de tamaño de archivo?',
+      faq4A: 'Puedes comprimir vídeos de hasta 2 GB. Como el procesamiento ocurre en tu navegador, los archivos muy grandes pueden tardar más según la CPU y la memoria disponible de tu dispositivo.',
+      faq5Q: '¿El vídeo comprimido perderá calidad?',
+      faq5A: 'ZipStor usa presets de compresión inteligentes que equilibran calidad y tamaño de archivo. El preset Alta Calidad 1080p preserva una calidad casi original, mientras que el preset Rápido 720p produce archivos más pequeños para compartir rápido.',
+      faq6Q: '¿ZipStor funciona en iPhone y Android?',
+      faq6A: 'Sí. ZipStor funciona en cualquier navegador móvil o de escritorio moderno que soporte WebAssembly — incluyendo Safari en iPhone, Chrome en Android y todos los principales navegadores de escritorio. No requiere instalación de app.',
     },
     compressor: {
       title: 'Comprime tu vídeo',
@@ -722,6 +749,7 @@ export const dictionaries = {
       freeTitle: '¿Por qué es gratis?',
       freeDesc:
         'ZipStor se financia con anuncios. El motor de compresión se ejecuta en tu propio dispositivo, por lo que no tenemos costos de servidor.',
+      contactDesc: '¿Tienes preguntas o comentarios? Escríbenos a support@videoshrink.app — normalmente respondemos en 48 horas.',
     },
     privacy: {
       title: 'Política de Privacidad',
@@ -738,7 +766,7 @@ export const dictionaries = {
       adsDesc:
         'Este sitio web puede mostrar anuncios servidos por Google AdSense. Google y sus socios pueden usar cookies para mostrar anuncios basados en tus visitas anteriores a este u otros sitios web. Puedes desactivar la publicidad personalizada en la Configuración de Anuncios de Google.',
       contactTitle: 'Contacto',
-      contactDesc: 'Si tienes preguntas sobre esta Política de Privacidad, contáctanos.',
+      contactDesc: 'Si tienes preguntas sobre esta Política de Privacidad, contáctanos en support@videoshrink.app.',
     },
     terms: {
       title: 'Términos de Servicio',
@@ -817,6 +845,12 @@ export const dictionaries = {
       faq2A: 'ZipStor unterstützt MP4, MOV, WebM, AVI und andere wichtige Formate. Sie können als MP4, MKV oder WebM exportieren.',
       faq3Q: 'Ist die Google-Drive-Integration sicher?',
       faq3A: 'Ja. Wir verwenden die offizielle Google OAuth 2.0-Authentifizierung und fordern nur die minimal erforderliche Dateizugriffsberechtigung zum Upload Ihres komprimierten Videos.',
+      faq4Q: 'Gibt es eine Dateigrößenbegrenzung?',
+      faq4A: 'Sie können Videos bis zu 2 GB komprimieren. Da die Verarbeitung im Browser erfolgt, können sehr große Dateien je nach CPU und verfügbarem Speicher Ihres Geräts länger dauern.',
+      faq5Q: 'Verliert das komprimierte Video an Qualität?',
+      faq5A: 'ZipStor verwendet intelligente Komprimierungs-Presets, die Qualität und Dateigröße ausbalancieren. Das High Quality 1080p-Preset bewahrt nahezu die Originalqualität, während das Fast 720p-Preset kleinere Dateien für schnelles Teilen erzeugt.',
+      faq6Q: 'Funktioniert ZipStor auf iPhone und Android?',
+      faq6A: 'Ja. ZipStor funktioniert in jedem modernen Mobil- oder Desktop-Browser, der WebAssembly unterstützt — einschließlich Safari auf iPhone, Chrome auf Android und allen gängigen Desktop-Browsern. Keine App-Installation erforderlich.',
     },
     compressor: {
       title: 'Video komprimieren',
@@ -912,6 +946,7 @@ export const dictionaries = {
       freeTitle: 'Warum ist es kostenlos?',
       freeDesc:
         'ZipStor wird durch Werbung finanziert. Die Komprimierungs-Engine läuft auf Ihrem eigenen Gerät, daher haben wir keine Serverkosten.',
+      contactDesc: 'Fragen oder Feedback? Schreiben Sie an support@videoshrink.app — wir antworten in der Regel innerhalb von 48 Stunden.',
     },
     privacy: {
       title: 'Datenschutzerklärung',
@@ -928,7 +963,7 @@ export const dictionaries = {
       adsDesc:
         'Diese Website kann Werbung von Google AdSense anzeigen. Google und seine Partner können Cookies verwenden, um Werbung basierend auf Ihren früheren Besuchen dieser oder anderer Websites zu schalten. Sie können personalisierte Werbung in den Google-Anzeigeneinstellungen deaktivieren.',
       contactTitle: 'Kontakt',
-      contactDesc: 'Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte.',
+      contactDesc: 'Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte unter support@videoshrink.app.',
     },
     terms: {
       title: 'Nutzungsbedingungen',
@@ -1007,6 +1042,12 @@ export const dictionaries = {
       faq2A: 'ZipStor prend en charge MP4, MOV, WebM, AVI et autres formats principaux. Vous pouvez exporter en MP4, MKV ou WebM.',
       faq3Q: 'L\'intégration Google Drive est-elle sûre ?',
       faq3A: 'Oui. Nous utilisons l\'authentification officielle Google OAuth 2.0 et ne demandons que l\'autorisation minimale d\'accès aux fichiers nécessaire pour uploader votre vidéo compressée.',
+      faq4Q: 'Y a-t-il une limite de taille de fichier ?',
+      faq4A: 'Vous pouvez compresser des vidéos jusqu\'à 2 Go. Comme le traitement se fait dans votre navigateur, les très gros fichiers peuvent prendre plus de temps selon le CPU et la mémoire disponible de votre appareil.',
+      faq5Q: 'La vidéo compressée perdra-t-elle en qualité ?',
+      faq5A: 'ZipStor utilise des presets de compression intelligents qui équilibrent qualité et taille de fichier. Le preset Haute Qualité 1080p préserve une qualité quasi originale, tandis que le preset Rapide 720p produit des fichiers plus petits pour un partage rapide.',
+      faq6Q: 'ZipStor fonctionne-t-il sur iPhone et Android ?',
+      faq6A: 'Oui. ZipStor fonctionne dans tout navigateur mobile ou de bureau moderne supportant WebAssembly — y compris Safari sur iPhone, Chrome sur Android et tous les principaux navigateurs de bureau. Aucune installation d\'application requise.',
     },
     compressor: {
       title: 'Compresser votre vidéo',
@@ -1102,6 +1143,7 @@ export const dictionaries = {
       freeTitle: 'Pourquoi c\'est gratuit ?',
       freeDesc:
         'ZipStor est financé par la publicité. Le moteur de compression s\'exécute sur votre propre appareil, donc nous n\'avons aucun coût de serveur.',
+      contactDesc: 'Des questions ou des commentaires ? Écrivez-nous à support@videoshrink.app — nous répondons généralement sous 48 heures.',
     },
     privacy: {
       title: 'Politique de Confidentialité',
@@ -1118,7 +1160,7 @@ export const dictionaries = {
       adsDesc:
         'Ce site web peut afficher des publicités servies par Google AdSense. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces basées sur vos visites précédentes sur ce site ou d\'autres sites. Vous pouvez désactiver la publicité personnalisée dans les Paramètres des Annonces Google.',
       contactTitle: 'Contact',
-      contactDesc: 'Si vous avez des questions sur cette Politique de Confidentialité, contactez-nous.',
+      contactDesc: 'Si vous avez des questions sur cette Politique de Confidentialité, contactez-nous à support@videoshrink.app.',
     },
     terms: {
       title: 'Conditions d\'Utilisation',
@@ -1197,6 +1239,12 @@ export const dictionaries = {
       faq2A: 'ZipStor支持MP4、MOV、WebM、AVI等主要格式。您可以导出为MP4、MKV或WebM。',
       faq3Q: 'Google云端硬盘集成安全吗？',
       faq3A: '是的。我们使用Google官方OAuth 2.0认证，仅请求上传压缩视频所需的最少文件访问权限。',
+      faq4Q: '有文件大小限制吗？',
+      faq4A: '您可以压缩最大2GB的视频。由于处理在浏览器中进行，非常大的文件可能根据设备的CPU和可用内存需要更长时间。',
+      faq5Q: '压缩后视频会损失画质吗？',
+      faq5A: 'ZipStor使用智能压缩预设来平衡画质和文件大小。高质量1080p预设保持接近原始画质，快速720p预设则生成更小的文件便于快速分享。',
+      faq6Q: 'ZipStor在iPhone和Android上能用吗？',
+      faq6A: '是的。ZipStor在所有支持WebAssembly的现代移动和桌面浏览器中都能运行 — 包括iPhone上的Safari、Android上的Chrome以及所有主流桌面浏览器。无需安装应用。',
     },
     compressor: {
       title: '压缩您的视频',
@@ -1292,6 +1340,7 @@ export const dictionaries = {
       freeTitle: '为什么免费？',
       freeDesc:
         'ZipStor通过广告支持。压缩引擎在您自己的设备上运行，因此我们没有服务器成本。',
+      contactDesc: '有问题或反馈？请发邮件至 support@videoshrink.app — 我们通常在48小时内回复。',
     },
     privacy: {
       title: '隐私政策',
@@ -1308,7 +1357,7 @@ export const dictionaries = {
       adsDesc:
         '本网站可能显示由Google AdSense投放的广告。Google及其合作伙伴可能使用Cookie根据您之前访问本网站或其他网站的记录来投放广告。您可以在Google广告设置中停用个性化广告。',
       contactTitle: '联系方式',
-      contactDesc: '如果您对本隐私政策有疑问，请联系我们。',
+      contactDesc: '如果您对本隐私政策有疑问，请联系我们：support@videoshrink.app。',
     },
     terms: {
       title: '服务条款',

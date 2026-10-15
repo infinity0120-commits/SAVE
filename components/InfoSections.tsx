@@ -24,6 +24,12 @@ interface InfoSectionsProps {
     faq2A: string;
     faq3Q: string;
     faq3A: string;
+    faq4Q: string;
+    faq4A: string;
+    faq5Q: string;
+    faq5A: string;
+    faq6Q: string;
+    faq6A: string;
   };
 }
 
@@ -104,6 +110,30 @@ export function InfoSections({ dict }: InfoSectionsProps) {
               </AccordionTrigger>
               <AccordionContent className="text-sm text-slate-600 dark:text-slate-400">
                 {dict.faq3A}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq4">
+              <AccordionTrigger className="text-sm font-semibold text-slate-900 dark:text-white">
+                {dict.faq4Q}
+              </AccordionTrigger>
+              <AccordionContent className="text-sm text-slate-600 dark:text-slate-400">
+                {dict.faq4A}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq5">
+              <AccordionTrigger className="text-sm font-semibold text-slate-900 dark:text-white">
+                {dict.faq5Q}
+              </AccordionTrigger>
+              <AccordionContent className="text-sm text-slate-600 dark:text-slate-400">
+                {dict.faq5A}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq6">
+              <AccordionTrigger className="text-sm font-semibold text-slate-900 dark:text-white">
+                {dict.faq6Q}
+              </AccordionTrigger>
+              <AccordionContent className="text-sm text-slate-600 dark:text-slate-400">
+                {dict.faq6A}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
