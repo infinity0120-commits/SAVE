@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -74,6 +75,12 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} notranslate`} suppressHydrationWarning>
         {children}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4890153059682539"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
