@@ -35,6 +35,8 @@ export const dictionaries = {
       seoTitle: 'Reduce iPhone Video File Size — Free Online Compressor',
       seoDescription:
         'Learn how to reduce iPhone video file size without losing quality. ZipStor compresses your videos right in the browser — no uploads, no apps, completely free.',
+      seoDescription2:
+        'ZipStor is a privacy-first video compression tool that runs entirely in your browser using WebAssembly technology. Unlike traditional online compressors that upload your files to a remote server, ZipStor processes everything locally on your device — meaning your videos are never transmitted over the internet and cannot be accessed by anyone but you. This makes it ideal for compressing sensitive or personal videos. The tool supports all major video formats including MP4, MOV, WebM, and AVI, and lets you choose between fast compression for quick sharing or high-quality output for archival. Whether you need to shrink a large iPhone video for email, reduce a 4K recording for social media, or simply free up storage space on your device, ZipStor provides a fast, free, and secure solution with no sign-up required.',
       guideLinksTitle: 'Helpful Guides',
       guideLink1: 'How to Reduce iPhone Video File Size',
       // Info sections
@@ -156,7 +158,7 @@ export const dictionaries = {
       freeTitle: 'Why is it free?',
       freeDesc:
         'ZipStor is supported by ads. The compression engine runs on your own device, so we have no server costs to pass on to you.',
-      contactDesc: 'Have questions or feedback? Email us at support@videoshrink.app — we usually reply within 48 hours.',
+      contactDesc: 'Have questions or feedback? Email us at infinity0120@gmail.com — we usually reply within 48 hours.',
     },
     privacy: {
       title: 'Privacy Policy',
@@ -173,7 +175,7 @@ export const dictionaries = {
       adsDesc:
         'This website may display ads served by Google AdSense. Google and its partners may use cookies to serve ads based on your prior visits to this website or other websites. You can opt out of personalized advertising by visiting Google Ads Settings.',
       contactTitle: 'Contact',
-      contactDesc: 'If you have questions about this Privacy Policy, please contact us at support@videoshrink.app.',
+      contactDesc: 'If you have questions about this Privacy Policy, please contact us at infinity0120@gmail.com.',
     },
     terms: {
       title: 'Terms of Service',
@@ -235,6 +237,8 @@ export const dictionaries = {
       seoTitle: '아이폰 동영상 용량 줄이기 — 무료 온라인 압축기',
       seoDescription:
         '화질 손실 없이 아이폰 동영상 용량을 줄이는 방법을 알아보세요. ZipStor는 브라우저에서 바로 압축 — 업로드 없음, 앱 없음, 완전 무료.',
+      seoDescription2:
+        'ZipStor는 WebAssembly 기술을 사용하여 브라우저 내에서 완전히 실행되는 프라이버시 중심 동영상 압축 도구입니다. 파일을 원격 서버에 업로드하는 기존 온라인 압축기와 달리, ZipStor는 모든 처리를 기기에서 로컬로 수행합니다 — 즉, 동영상이 인터넷을 통해 전송되지 않으며 본인 외에는 누구도 접근할 수 없습니다. 이로 인해 민감하거나 개인적인 동영상을 압축하는 데 이상적입니다. MP4, MOV, WebM, AVI를 포함한 모든 주요 동영상 포맷을 지원하며, 빠른 공유를 위한 빠른 압축과 보관용 고화질 출력 중에서 선택할 수 있습니다. 이메일용으로 큰 아이폰 동영상을 줄이거나, 소셜 미디어용으로 4K 영상을 축소하거나, 기기 저장 공간을 확보해야 할 때 ZipStor는 가입 불필요의 빠르고 무료이며 안전한 솔루션을 제공합니다.',
       guideLinksTitle: '도움이 되는 가이드',
       guideLink1: '아이폰 동영상 용량 줄이는 방법',
       // 정보 섹션
@@ -355,7 +359,7 @@ export const dictionaries = {
       freeTitle: '왜 무료인가요?',
       freeDesc:
         'ZipStor는 광고로 운영됩니다. 압축 엔진이 사용자 기기에서 실행되므로 서버 비용이 들지 않습니다.',
-      contactDesc: '질문이나 피드백이 있으시면 support@videoshrink.app로 이메일 보내주세요 — 보통 48시간 이내에 답변드립니다.',
+      contactDesc: '질문이나 피드백이 있으시면 infinity0120@gmail.com로 이메일 보내주세요 — 보통 48시간 이내에 답변드립니다.',
     },
     privacy: {
       title: '개인정보처리방침',
@@ -372,7 +376,7 @@ export const dictionaries = {
       adsDesc:
         '이 웹사이트는 Google AdSense가 제공하는 광고를 표시할 수 있습니다. Google 및 파트너는 이 웹사이트 또는 다른 웹사이트 방문 기록을 기반으로 쿠키를 사용하여 광고를 게재할 수 있습니다. Google 광고 설정에서 맞춤 광고를 비활성화할 수 있습니다.',
       contactTitle: '연락처',
-      contactDesc: '개인정보처리방침에 대해 궁금한 점이 있으시면 support@videoshrink.app로 연락 주세요.',
+      contactDesc: '개인정보처리방침에 대해 궁금한 점이 있으시면 infinity0120@gmail.com로 연락 주세요.',
     },
     terms: {
       title: '이용약관',
@@ -433,6 +437,8 @@ export const dictionaries = {
       seoTitle: 'iPhone動画のファイルサイズを削減 — 無料オンライン圧縄ツール',
       seoDescription:
         '画質を落とさずiPhone動画のファイルサイズを削減する方法を学びましょう。ZipStorはブラウザで直接圧縮 — アップロード不要、アプリ不要、完全無料。',
+      seoDescription2:
+        'ZipStorはWebAssembly技術を使用してブラウザ内で完全に実行されるプライバシー重視の動画圧縮ツールです。ファイルをリモートサーバーにアップロードする従来のオンライン圧縮ツールとは異なり、ZipStorはすべての処理をデバイス上でローカルに実行します — つまり、動画がインターネット経由で送信されることはなく、自分以外の誰もアクセスできません。これにより、機密性の高い個人的な動画の圧縮に理想的です。MP4、MOV、WebM、AVIを含むすべての主要な動画フォーマットをサポートし、素早い共有のための高速圧縮とアーカイブ用の高品質出力から選択できます。メール用の大きなiPhone動画の縮小、ソーシャルメディア用の4K映像の圧縮、またはデバイスのストレージ容量の確保が必要な場合、ZipStorは登録不要の高速・無料・安全なソリューションを提供します。',
       guideLinksTitle: '役立つガイド',
       guideLink1: 'iPhone動画のファイルサイズを削減する方法',
       // 情報セクション
@@ -552,7 +558,7 @@ export const dictionaries = {
       freeTitle: 'なぜ無料なの？',
       freeDesc:
         'ZipStorは広告で運営されています。圧縮エンジンはユーザーのデバイスで実行されるため、サーバー費用がかかりません。',
-      contactDesc: 'ご質問やフィードバックは support@videoshrink.app までメールでお問い合わせください — 通常48時間以内に返信します。',
+      contactDesc: 'ご質問やフィードバックは infinity0120@gmail.com までメールでお問い合わせください — 通常48時間以内に返信します。',
     },
     privacy: {
       title: 'プライバシーポリシー',
@@ -569,7 +575,7 @@ export const dictionaries = {
       adsDesc:
         'このウェブサイトにはGoogle AdSense配信の広告が表示される場合があります。Googleとパートナーはこのウェブサイトまたは他のウェブサイトへの過去の訪問に基づき、Cookieを使用して広告を配信する場合があります。Google広告設定でパーソナライズ広告を無効にできます。',
       contactTitle: 'お問い合わせ',
-      contactDesc: 'プライバシーポリシーについてご質問がありましたら、support@videoshrink.appまでお問い合わせください。',
+      contactDesc: 'プライバシーポリシーについてご質問がありましたら、infinity0120@gmail.comまでお問い合わせください。',
     },
     terms: {
       title: '利用規約',
@@ -630,6 +636,8 @@ export const dictionaries = {
       seoTitle: 'Reducir el tamaño de vídeos iPhone — Compresor online gratis',
       seoDescription:
         'Aprende cómo reducir el tamaño de vídeos iPhone sin perder calidad. ZipStor comprime tus vídeos directamente en el navegador — sin subidas, sin apps, totalmente gratis.',
+      seoDescription2:
+        'ZipStor es una herramienta de compresión de vídeo centrada en la privacidad que se ejecuta completamente en tu navegador utilizando tecnología WebAssembly. A diferencia de los compresores en línea tradicionales que suben tus archivos a un servidor remoto, ZipStor procesa todo localmente en tu dispositivo — lo que significa que tus vídeos nunca se transmiten por internet y nadie más que tú puede acceder a ellos. Esto lo hace ideal para comprimir vídeos sensibles o personales. La herramienta admite todos los formatos principales incluyendo MP4, MOV, WebM y AVI, y te permite elegir entre compresión rápida para compartir o salida de alta calidad para archivo. Ya sea que necesites reducir un vídeo grande de iPhone para email, comprimir una grabación 4K para redes sociales, o simplemente liberar espacio de almacenamiento, ZipStor ofrece una solución rápida, gratuita y segura sin registro.',
       guideLinksTitle: 'Guías útiles',
       guideLink1: 'Cómo reducir el tamaño de vídeos iPhone',
       // Secciones de información
@@ -749,7 +757,7 @@ export const dictionaries = {
       freeTitle: '¿Por qué es gratis?',
       freeDesc:
         'ZipStor se financia con anuncios. El motor de compresión se ejecuta en tu propio dispositivo, por lo que no tenemos costos de servidor.',
-      contactDesc: '¿Tienes preguntas o comentarios? Escríbenos a support@videoshrink.app — normalmente respondemos en 48 horas.',
+      contactDesc: '¿Tienes preguntas o comentarios? Escríbenos a infinity0120@gmail.com — normalmente respondemos en 48 horas.',
     },
     privacy: {
       title: 'Política de Privacidad',
@@ -766,7 +774,7 @@ export const dictionaries = {
       adsDesc:
         'Este sitio web puede mostrar anuncios servidos por Google AdSense. Google y sus socios pueden usar cookies para mostrar anuncios basados en tus visitas anteriores a este u otros sitios web. Puedes desactivar la publicidad personalizada en la Configuración de Anuncios de Google.',
       contactTitle: 'Contacto',
-      contactDesc: 'Si tienes preguntas sobre esta Política de Privacidad, contáctanos en support@videoshrink.app.',
+      contactDesc: 'Si tienes preguntas sobre esta Política de Privacidad, contáctanos en infinity0120@gmail.com.',
     },
     terms: {
       title: 'Términos de Servicio',
@@ -827,6 +835,8 @@ export const dictionaries = {
       seoTitle: 'iPhone-Videodateigröße reduzieren — Kostenlos online komprimieren',
       seoDescription:
         'Erfahren Sie, wie Sie die Dateigröße von iPhone-Videos ohne Qualitätsverlust reduzieren. ZipStor komprimiert Ihre Videos direkt im Browser — keine Uploads, keine Apps, komplett kostenlos.',
+      seoDescription2:
+        'ZipStor ist ein datenschutzorientiertes Videokomprimierungstool, das vollständig in Ihrem Browser mit WebAssembly-Technologie ausgeführt wird. Im Gegensatz zu herkömmlichen Online-Kompressoren, die Ihre Dateien auf einen Remote-Server hochladen, verarbeitet ZipStor alles lokal auf Ihrem Gerät — das bedeutet, dass Ihre Videos nie über das Internet übertragen werden und niemand außer Ihnen darauf zugreifen kann. Dies macht es ideal zum Komprimieren sensibler oder persönlicher Videos. Das Tool unterstützt alle gängigen Videoformate including MP4, MOV, WebM und AVI und ermöglicht die Wahl zwischen schneller Komprimierung zum Teilen oder hochwertiger Ausgabe zur Archivierung. Ob Sie ein großes iPhone-Video für E-Mail verkleinern, eine 4K-Aufnahme für Social Media komprimieren oder einfach Speicherplatz freigeben müssen — ZipStor bietet eine schnelle, kostenlose und sichere Lösung ohne Registrierung.',
       guideLinksTitle: 'Hilfreiche Anleitungen',
       guideLink1: 'So reduzieren Sie die iPhone-Videodateigröße',
       // Info-Bereiche
@@ -946,7 +956,7 @@ export const dictionaries = {
       freeTitle: 'Warum ist es kostenlos?',
       freeDesc:
         'ZipStor wird durch Werbung finanziert. Die Komprimierungs-Engine läuft auf Ihrem eigenen Gerät, daher haben wir keine Serverkosten.',
-      contactDesc: 'Fragen oder Feedback? Schreiben Sie an support@videoshrink.app — wir antworten in der Regel innerhalb von 48 Stunden.',
+      contactDesc: 'Fragen oder Feedback? Schreiben Sie an infinity0120@gmail.com — wir antworten in der Regel innerhalb von 48 Stunden.',
     },
     privacy: {
       title: 'Datenschutzerklärung',
@@ -963,7 +973,7 @@ export const dictionaries = {
       adsDesc:
         'Diese Website kann Werbung von Google AdSense anzeigen. Google und seine Partner können Cookies verwenden, um Werbung basierend auf Ihren früheren Besuchen dieser oder anderer Websites zu schalten. Sie können personalisierte Werbung in den Google-Anzeigeneinstellungen deaktivieren.',
       contactTitle: 'Kontakt',
-      contactDesc: 'Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte unter support@videoshrink.app.',
+      contactDesc: 'Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte unter infinity0120@gmail.com.',
     },
     terms: {
       title: 'Nutzungsbedingungen',
@@ -1024,6 +1034,8 @@ export const dictionaries = {
       seoTitle: 'Réduire la taille des vidéos iPhone — Compresseur en ligne gratuit',
       seoDescription:
         'Apprenez comment réduire la taille des vidéos iPhone sans perte de qualité. ZipStor compresse vos vidéos directement dans le navigateur — sans upload, sans application, totalement gratuit.',
+      seoDescription2:
+        'ZipStor est un outil de compression vidéo axé sur la confidentialité qui s\'exécute entièrement dans votre navigateur grâce à la technologie WebAssembly. Contrairement aux compresseurs en ligne traditionnels qui téléchargent vos fichiers vers un serveur distant, ZipStor traite tout localement sur votre appareil — ce qui signifie que vos vidéos ne sont jamais transmises via internet et que personne d\'autre que vous n\'y a accès. Cela le rend idéal pour compresser des vidéos sensibles ou personnelles. L\'outil prend en charge tous les principaux formats vidéo including MP4, MOV, WebM et AVI, et vous permet de choisir entre une compression rapide pour le partage ou une sortie de haute qualité pour l\'archivage. Que vous ayez besoin de réduire une grande vidéo iPhone pour un email, de compresser un enregistrement 4K pour les réseaux sociaux, ou simplement de libérer de l\'espace de stockage, ZipStor offre une solution rapide, gratuite et sécurisée sans inscription.',
       guideLinksTitle: 'Guides utiles',
       guideLink1: 'Comment réduire la taille des vidéos iPhone',
       // Sections d'information
@@ -1143,7 +1155,7 @@ export const dictionaries = {
       freeTitle: 'Pourquoi c\'est gratuit ?',
       freeDesc:
         'ZipStor est financé par la publicité. Le moteur de compression s\'exécute sur votre propre appareil, donc nous n\'avons aucun coût de serveur.',
-      contactDesc: 'Des questions ou des commentaires ? Écrivez-nous à support@videoshrink.app — nous répondons généralement sous 48 heures.',
+      contactDesc: 'Des questions ou des commentaires ? Écrivez-nous à infinity0120@gmail.com — nous répondons généralement sous 48 heures.',
     },
     privacy: {
       title: 'Politique de Confidentialité',
@@ -1160,7 +1172,7 @@ export const dictionaries = {
       adsDesc:
         'Ce site web peut afficher des publicités servies par Google AdSense. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces basées sur vos visites précédentes sur ce site ou d\'autres sites. Vous pouvez désactiver la publicité personnalisée dans les Paramètres des Annonces Google.',
       contactTitle: 'Contact',
-      contactDesc: 'Si vous avez des questions sur cette Politique de Confidentialité, contactez-nous à support@videoshrink.app.',
+      contactDesc: 'Si vous avez des questions sur cette Politique de Confidentialité, contactez-nous à infinity0120@gmail.com.',
     },
     terms: {
       title: 'Conditions d\'Utilisation',
@@ -1221,6 +1233,8 @@ export const dictionaries = {
       seoTitle: '减少iPhone视频文件大小 — 免费在线压缩工具',
       seoDescription:
         '了解如何在不损失画质的情况下减少iPhone视频文件大小。ZipStor直接在浏览器中压缩您的视频 — 无需上传，无需应用，完全免费。',
+      seoDescription2:
+        'ZipStor是一款使用WebAssembly技术在浏览器中完全运行的隐私优先视频压缩工具。与将文件上传到远程服务器的传统在线压缩工具不同，ZipStor在您的设备上进行所有本地处理——这意味着您的视频永远不会通过互联网传输，除您之外无人可以访问。这使得它非常适合压缩敏感或个人视频。该工具支持所有主要视频格式，包括MP4、MOV、WebM和AVI，并允许您在快速压缩以供分享或高质量输出以供存档之间选择。无论您需要缩小大型iPhone视频以便通过邮件发送、压缩4K录像用于社交媒体，还是仅仅释放设备存储空间，ZipStor都提供了一个快速、免费且安全的解决方案，无需注册。',
       guideLinksTitle: '实用指南',
       guideLink1: '如何减少iPhone视频文件大小',
       // 信息部分
@@ -1340,7 +1354,7 @@ export const dictionaries = {
       freeTitle: '为什么免费？',
       freeDesc:
         'ZipStor通过广告支持。压缩引擎在您自己的设备上运行，因此我们没有服务器成本。',
-      contactDesc: '有问题或反馈？请发邮件至 support@videoshrink.app — 我们通常在48小时内回复。',
+      contactDesc: '有问题或反馈？请发邮件至 infinity0120@gmail.com — 我们通常在48小时内回复。',
     },
     privacy: {
       title: '隐私政策',
@@ -1357,7 +1371,7 @@ export const dictionaries = {
       adsDesc:
         '本网站可能显示由Google AdSense投放的广告。Google及其合作伙伴可能使用Cookie根据您之前访问本网站或其他网站的记录来投放广告。您可以在Google广告设置中停用个性化广告。',
       contactTitle: '联系方式',
-      contactDesc: '如果您对本隐私政策有疑问，请联系我们：support@videoshrink.app。',
+      contactDesc: '如果您对本隐私政策有疑问，请联系我们：infinity0120@gmail.com。',
     },
     terms: {
       title: '服务条款',

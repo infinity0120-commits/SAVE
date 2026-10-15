@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://zipstor.vercel.app'),
   title: 'ZipStor — Free Online Video Compressor | No Upload',
   description:
     'Compress video files right in your browser. 100% private — your videos never leave your device. Free, no sign-up, works on iPhone, Android, Mac & PC.',

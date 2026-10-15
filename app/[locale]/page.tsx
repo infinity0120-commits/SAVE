@@ -170,6 +170,9 @@ export default function HomePage({ params }: { params: { locale: string } }) {
           <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
             {h.seoDescription}
           </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            {h.seoDescription2}
+          </p>
         </div>
       </section>
 
