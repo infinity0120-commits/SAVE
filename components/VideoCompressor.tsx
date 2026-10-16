@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { FFmpeg } from '@ffmpeg/ffmpeg';
-import { fetchFile, toBlobURL } from '@ffmpeg/util';
+import { toBlobURL } from '@ffmpeg/util';
 import {
   Upload,
   FileVideo,
@@ -47,6 +47,7 @@ const formatMime: Record<OutputFormat, string> = {
 };
 
 const GOOGLE_DRIVE_UI_ENABLED = false;
+const MAX_FILE_SIZE = 2 * 1024 * 1024 * 1024;
 
 const formatCodecs: Record<OutputFormat, { vcodec: string; acodec: string; extra: string[] }> = {
   mp4: { vcodec: 'libx264', acodec: 'aac', extra: ['-movflags', '+faststart'] },
@@ -102,7 +103,7 @@ function formatBytes(bytes: number): string {
   if (bytes === 0) return '0 B';
   const k = 1024;
   const sizes = ['B', 'KB', 'MB', 'GB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  const i = Math.min(Math.floor(Math.log(bytes) / Math.log(k)), sizes.length - 1);
   return `${(bytes / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1)} ${sizes[i]}`;
 }
 
@@ -250,6 +251,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
   const [driveConnecting, setDriveConnecting] = useState(false);
   const [driveError, setDriveError] = useState<string | null>(null);
   const [driveConfigured] = useState(() => GOOGLE_DRIVE_UI_ENABLED);
+  const [selectionError, setSelectionError] = useState<string | null>(null);
 
   const ffmpegRef = useRef<FFmpeg | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -339,6 +341,18 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
     const videoFiles = Array.from(files).filter((f) => f.type.startsWith('video/'));
     if (videoFiles.length === 0) return;
 
+    const unreadableFile = videoFiles.find((file) => file.size === 0);
+    const oversizedFile = videoFiles.find((file) => file.size > MAX_FILE_SIZE);
+    if (unreadableFile || oversizedFile) {
+      setSelectionError(
+        unreadableFile
+          ? '이 파일은 브라우저에서 0 B로 전달되었습니다. 파일이 기기에 완전히 저장되었는지 확인한 뒤 다시 선택해 주세요.'
+          : '브라우저에서 처리할 수 있는 최대 크기는 2 GB입니다. 더 작은 파일을 선택해 주세요.',
+      );
+      return;
+    }
+
+    setSelectionError(null);
     const newItems: QueueItem[] = videoFiles.map((file) => ({
       id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
       file,
@@ -378,6 +392,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
       if (item.outputUrl) URL.revokeObjectURL(item.outputUrl);
     });
     setQueue([]);
+    setSelectionError(null);
     setStage('idle');
     setProgress(0);
     setEta(null);
@@ -471,7 +486,10 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
         const outputName = `output_${i}.${outputExt}`;
 
         try {
-          await ffmpeg.writeFile(inputName, await fetchFile(item.file));
+          if (item.file.size === 0 || item.file.size > MAX_FILE_SIZE) {
+            throw new Error('The selected file is not readable or exceeds the supported size.');
+          }
+          await ffmpeg.writeFile(inputName, new Uint8Array(await item.file.arrayBuffer()));
           const cmd = buildCommand(inputName, outputName, preset, outputFormat);
           await ffmpeg.exec(cmd);
 
@@ -553,6 +571,7 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
     stopElapsedTimer();
     releaseWakeLock();
     setQueue([]);
+    setSelectionError(null);
     setStage('idle');
     setProgress(0);
     setEta(null);
@@ -687,6 +706,13 @@ export function VideoCompressor({ locale, t }: VideoCompressorProps) {
 
   return (
     <div className="w-full">
+      {selectionError && (
+        <div className="mb-4 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50/80 p-4 dark:border-red-900 dark:bg-red-950/20">
+          <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-600 dark:text-red-400" />
+          <p className="text-sm leading-relaxed text-red-700 dark:text-red-300">{selectionError}</p>
+        </div>
+      )}
+
       {/* Charging warning banner */}
       {showQueue && (
         <div className="mb-4 flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50/80 p-4 dark:border-amber-900 dark:bg-amber-950/20">
